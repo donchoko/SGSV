@@ -1,0 +1,17 @@
+﻿<Window x:Class="Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow" Height="200" Width="550" ResizeMode="NoResize">
+    <Grid Background="#FFD2E1FF">
+        <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="168,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="93,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="93,121,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="475,10,0,0" VerticalAlignment="Top" Width="57" Source="Diosa de la Justicia.png"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" VerticalAlignment="Top" Width="57" Source="escudo_oij.png"/>
+        <Label Content="Sistema de versionamiento del Sistema de Gestión" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="395" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Departamento de Ciencias Forenses" HorizontalAlignment="Left" Margin="136,41,0,0" VerticalAlignment="Top" Width="282" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="btnLogin" Content="Iniciar sesión" HorizontalAlignment="Left" Margin="457,139,0,0" VerticalAlignment="Top" Width="75"/>
+        <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="168,124,0,0" VerticalAlignment="Top" Width="250" Height="23"/>
+
+    </Grid>
+</Window>
