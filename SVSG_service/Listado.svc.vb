@@ -9,6 +9,22 @@ Public Class Listado
         Else
             Dim lista As ListaPublicaciones = New ListaPublicaciones()
 
+            Dim p As SVSG_lib.Publicacion = New SVSG_lib.Publicacion()
+            If seccion <> "*" Then
+                p.seccion = seccion
+            End If
+
+            If tipo_doc <> "*" Then
+                p.ambito = tipo_doc
+            End If
+
+            If vigencia <> "*" Then
+                p.detalle = vigencia
+            End If
+
+            Using context As New SVSG_lib.SVSGEntities
+                lista.Publicaciones = context.Publicacion.ToList().Where(Function(pub As SVSG_lib.Publicacion) pub.Equals(p))
+            End Using
             Return lista
         End If
     End Function
