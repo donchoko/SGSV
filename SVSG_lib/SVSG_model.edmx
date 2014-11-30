@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SVSGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="alcance" Type="varchar" MaxLength="5000" Nullable="false" />
+          <Property Name="encargado" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="creado" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Historico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="accion" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Publicacion">
+          <Key>
+            <PropertyRef Name="cod" />
+            <PropertyRef Name="documento_version" />
+          </Key>
+          <Property Name="cod" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="documento_version" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="detalle" Type="varchar" MaxLength="1000" />
+          <Property Name="archivo" Type="varbinary(max)" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="publicado_por" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="seccion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ambito" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="sistema_gestion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="procedencia" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="tipo_alcance" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Publicacion__cod__276EDEB3">
+          <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+          <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="Publicacion">
+              <PropertyRef Name="cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SVSGModelStoreContainer">
+          <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Historico" EntityType="Self.Historico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publicacion" EntityType="Self.Publicacion" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Publicacion__cod__276EDEB3" Association="Self.FK__Publicacion__cod__276EDEB3">
+            <End Role="Documento" EntitySet="Documento" />
+            <End Role="Publicacion" EntitySet="Publicacion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SVSGModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="alcance" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="encargado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="creado" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Publicacion" Relationship="Self.FK__Publicacion__cod__276EDEB3" FromRole="Documento" ToRole="Publicacion" />
+        </EntityType>
+        <EntityType Name="Historico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="accion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Publicacion">
+          <Key>
+            <PropertyRef Name="cod" />
+            <PropertyRef Name="documento_version" />
+          </Key>
+          <Property Name="cod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="documento_version" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detalle" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="archivo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="publicado_por" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="seccion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ambito" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sistema_gestion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="procedencia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo_alcance" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Documento" Relationship="Self.FK__Publicacion__cod__276EDEB3" FromRole="Publicacion" ToRole="Documento" />
+        </EntityType>
+        <Association Name="FK__Publicacion__cod__276EDEB3">
+          <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+          <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="Publicacion">
+              <PropertyRef Name="cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SVSGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Documento" EntityType="Self.Documento" />
+          <EntitySet Name="Historico" EntityType="Self.Historico" />
+          <EntitySet Name="Publicacion" EntityType="Self.Publicacion" />
+          <AssociationSet Name="FK__Publicacion__cod__276EDEB3" Association="Self.FK__Publicacion__cod__276EDEB3">
+            <End Role="Documento" EntitySet="Documento" />
+            <End Role="Publicacion" EntitySet="Publicacion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SVSGModelStoreContainer" CdmEntityContainer="SVSGEntities">
+          <EntitySetMapping Name="Documento">
+            <EntityTypeMapping TypeName="SVSGModel.Documento">
+              <MappingFragment StoreEntitySet="Documento">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="alcance" ColumnName="alcance" />
+                <ScalarProperty Name="encargado" ColumnName="encargado" />
+                <ScalarProperty Name="creado" ColumnName="creado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Historico">
+            <EntityTypeMapping TypeName="SVSGModel.Historico">
+              <MappingFragment StoreEntitySet="Historico">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="accion" ColumnName="accion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publicacion">
+            <EntityTypeMapping TypeName="SVSGModel.Publicacion">
+              <MappingFragment StoreEntitySet="Publicacion">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="documento_version" ColumnName="documento_version" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="archivo" ColumnName="archivo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="publicado_por" ColumnName="publicado_por" />
+                <ScalarProperty Name="seccion" ColumnName="seccion" />
+                <ScalarProperty Name="ambito" ColumnName="ambito" />
+                <ScalarProperty Name="sistema_gestion" ColumnName="sistema_gestion" />
+                <ScalarProperty Name="procedencia" ColumnName="procedencia" />
+                <ScalarProperty Name="tipo_alcance" ColumnName="tipo_alcance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -8,6 +8,7 @@ Public Class Listado
             Throw New ArgumentNullException("composite")
         Else
             Dim lista As ListaPublicaciones = New ListaPublicaciones()
+
             Return lista
         End If
     End Function

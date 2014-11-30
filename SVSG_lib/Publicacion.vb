@@ -10,13 +10,19 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Documento
+Partial Public Class Publicacion
     Public Property cod As String
-    Public Property nombre As String
-    Public Property alcance As String
-    Public Property encargado As String
-    Public Property creado As Date
+    Public Property documento_version As String
+    Public Property detalle As String
+    Public Property archivo As Byte()
+    Public Property fecha As Date
+    Public Property publicado_por As String
+    Public Property seccion As String
+    Public Property ambito As String
+    Public Property sistema_gestion As String
+    Public Property procedencia As String
+    Public Property tipo_alcance As String
 
-    Public Overridable Property Publicacion As ICollection(Of Publicacion) = New HashSet(Of Publicacion)
+    Public Overridable Property Documento As Documento
 
 End Class

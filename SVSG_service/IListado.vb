@@ -12,16 +12,16 @@ End Interface
 <DataContract()>
 Public Class ListaPublicaciones
 
-    Private lista As List(Of SVSG_lib.Publicación)
+    Private lista As List(Of SVSG_lib.Publicacion)
 
     Public Sub New()
-        Me.lista = New List(Of SVSG_lib.Publicación)
+        Me.lista = New List(Of SVSG_lib.Publicacion)
     End Sub
 
     <DataMember()>
-    Public Property Publicaciones() As SVSG_lib.Publicación
+    Public Property Publicaciones() As SVSG_lib.Publicacion
 
-    Public Sub agregar(ByVal p As SVSG_lib.Publicación)
+    Public Sub agregar(ByVal p As SVSG_lib.Publicacion)
         Me.lista.Add(p)
     End Sub
 End Class
