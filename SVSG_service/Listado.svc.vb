@@ -3,7 +3,13 @@
 Public Class Listado
     Implements IListado
 
-    Public Sub DoWork() Implements IListado.DoWork
-    End Sub
+    Public Function cargarLista(ByVal tipo_doc As String, ByVal seccion As String, ByVal vigencia As String) As ListaPublicaciones Implements IListado.cargarLista
+        If tipo_doc Is Nothing Or seccion Is Nothing Or vigencia Is Nothing Then
+            Throw New ArgumentNullException("composite")
+        Else
+            Dim lista As ListaPublicaciones = New ListaPublicaciones()
+            Return lista
+        End If
+    End Function
 
 End Class

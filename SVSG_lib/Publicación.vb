@@ -1,6 +1,6 @@
 ﻿Public Class Publicación
 
-    Private _documento As String
+    Private _documento As Documento
     Private _version As String
     Private _detalle As String
     Private _archivo As Byte
@@ -12,7 +12,7 @@
     Private _procedencia As String
     Private _tipo_alcance As String
 
-    Public Sub New(ByVal doc As String,
+    Public Sub New(ByVal doc As Documento,
                    ByVal version As String,
                    ByVal detalle As String,
                    ByVal archivo As Byte,
@@ -36,11 +36,11 @@
         Me._tipo_alcance = tipo_alcance
     End Sub
 
-    Public Property Documento() As String
+    Public Property Documento() As Documento
         Get
             Return Me._documento
         End Get
-        Set(value As String)
+        Set(value As Documento)
             Me._documento = value
         End Set
     End Property
