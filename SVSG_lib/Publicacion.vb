@@ -17,11 +17,13 @@ Partial Public Class Publicacion
     Public Property archivo As Byte()
     Public Property fecha As Date
     Public Property publicado_por As String
+    Public Property tipo As String
     Public Property seccion As String
     Public Property ambito As String
     Public Property sistema_gestion As String
     Public Property procedencia As String
     Public Property tipo_alcance As String
+    Public Property vigencia As String
 
     Public Overridable Property Documento As Documento
 

@@ -35,13 +35,15 @@
           <Property Name="archivo" Type="varbinary(max)" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="publicado_por" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="seccion" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="ambito" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="sistema_gestion" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="procedencia" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="tipo_alcance" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vigencia" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Publicacion__cod__276EDEB3">
+        <Association Name="FK__Publicacion__cod__38996AB5">
           <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
           <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -57,7 +59,7 @@
           <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Historico" EntityType="Self.Historico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publicacion" EntityType="Self.Publicacion" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Publicacion__cod__276EDEB3" Association="Self.FK__Publicacion__cod__276EDEB3">
+          <AssociationSet Name="FK__Publicacion__cod__38996AB5" Association="Self.FK__Publicacion__cod__38996AB5">
             <End Role="Documento" EntitySet="Documento" />
             <End Role="Publicacion" EntitySet="Publicacion" />
           </AssociationSet>
@@ -76,7 +78,7 @@
           <Property Name="alcance" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="encargado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="creado" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Publicacion" Relationship="Self.FK__Publicacion__cod__276EDEB3" FromRole="Documento" ToRole="Publicacion" />
+          <NavigationProperty Name="Publicacion" Relationship="Self.FK__Publicacion__cod__38996AB5" FromRole="Documento" ToRole="Publicacion" />
         </EntityType>
         <EntityType Name="Historico">
           <Key>
@@ -98,14 +100,16 @@
           <Property Name="archivo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="publicado_por" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="seccion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ambito" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="sistema_gestion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="procedencia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipo_alcance" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Documento" Relationship="Self.FK__Publicacion__cod__276EDEB3" FromRole="Publicacion" ToRole="Documento" />
+          <Property Name="vigencia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Documento" Relationship="Self.FK__Publicacion__cod__38996AB5" FromRole="Publicacion" ToRole="Documento" />
         </EntityType>
-        <Association Name="FK__Publicacion__cod__276EDEB3">
+        <Association Name="FK__Publicacion__cod__38996AB5">
           <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
           <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -121,7 +125,7 @@
           <EntitySet Name="Documento" EntityType="Self.Documento" />
           <EntitySet Name="Historico" EntityType="Self.Historico" />
           <EntitySet Name="Publicacion" EntityType="Self.Publicacion" />
-          <AssociationSet Name="FK__Publicacion__cod__276EDEB3" Association="Self.FK__Publicacion__cod__276EDEB3">
+          <AssociationSet Name="FK__Publicacion__cod__38996AB5" Association="Self.FK__Publicacion__cod__38996AB5">
             <End Role="Documento" EntitySet="Documento" />
             <End Role="Publicacion" EntitySet="Publicacion" />
           </AssociationSet>
@@ -162,11 +166,13 @@
                 <ScalarProperty Name="archivo" ColumnName="archivo" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="publicado_por" ColumnName="publicado_por" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
                 <ScalarProperty Name="seccion" ColumnName="seccion" />
                 <ScalarProperty Name="ambito" ColumnName="ambito" />
                 <ScalarProperty Name="sistema_gestion" ColumnName="sistema_gestion" />
                 <ScalarProperty Name="procedencia" ColumnName="procedencia" />
                 <ScalarProperty Name="tipo_alcance" ColumnName="tipo_alcance" />
+                <ScalarProperty Name="vigencia" ColumnName="vigencia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -188,6 +194,8 @@
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="False" />
+        <DesignerProperty Name="SynchronizePropertyFacets" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

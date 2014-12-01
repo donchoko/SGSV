@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce017646-98e8-4a3e-afb4-ba8f38979305" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54789/Listado.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Listado.disco" MetadataType="Disco" ID="d156b796-0ef3-47b6-9d36-f3de1252a5a2" SourceId="1" SourceUrl="http://localhost:54789/Listado.svc?disco" />
+    <MetadataFile FileName="Listado.xsd" MetadataType="Schema" ID="9b8c83f9-75b4-41bb-8366-74cec5d473df" SourceId="1" SourceUrl="http://localhost:54789/Listado.svc?xsd=xsd0" />
+    <MetadataFile FileName="Listado1.xsd" MetadataType="Schema" ID="b8b89d61-2727-43e8-a9f0-f6635d13816f" SourceId="1" SourceUrl="http://localhost:54789/Listado.svc?xsd=xsd1" />
+    <MetadataFile FileName="Listado2.xsd" MetadataType="Schema" ID="60f18064-903d-42d9-ac62-76a2fad1fe51" SourceId="1" SourceUrl="http://localhost:54789/Listado.svc?xsd=xsd2" />
+    <MetadataFile FileName="Listado.wsdl" MetadataType="Wsdl" ID="d6a47cda-f490-4758-b1a7-a21ef0511601" SourceId="1" SourceUrl="http://localhost:54789/Listado.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
