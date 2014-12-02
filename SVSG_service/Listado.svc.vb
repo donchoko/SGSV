@@ -12,22 +12,75 @@ Public Class Listado
             Dim publicaciones As New Publicaciones()
 
             Dim p As SVSG_lib.Publicacion = New SVSG_lib.Publicacion()
-            If seccion <> "*" Then
-                p.seccion = seccion
+
+            '1--
+            If tipo_doc <> "*" And seccion = "*" And vigencia = "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.tipo = tipo_doc).ToList()
+                End Using
             End If
 
-            If tipo_doc <> "*" Then
-                p.tipo = tipo_doc
+            '-2-
+            If tipo_doc = "*" And seccion <> "*" And vigencia = "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.seccion = seccion).ToList()
+                End Using
             End If
 
-            If vigencia <> "*" Then
-                p.vigencia = vigencia
+            '--3
+            If tipo_doc = "*" And seccion = "*" And vigencia <> "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.vigencia = vigencia).ToList()
+                End Using
             End If
 
-            Using context As New SVSG_lib.SVSGEntities
-                context.Configuration.ProxyCreationEnabled = False
-                publicaciones.Lista = context.Publicacion.Include("Documento").ToList()
-            End Using
+            '12-
+            If tipo_doc <> "*" And seccion <> "*" And vigencia = "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.tipo = tipo_doc).Where(Function(pub) pub.seccion = seccion).ToList()
+                End Using
+            End If
+
+            '1-3
+            If tipo_doc <> "*" And seccion = "*" And vigencia <> "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.tipo = tipo_doc).Where(Function(pub) pub.vigencia = vigencia).ToList()
+                End Using
+            End If
+
+            '-23
+            If tipo_doc = "*" And seccion <> "*" And vigencia <> "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.seccion = seccion).Where(Function(pub) pub.vigencia = vigencia).ToList()
+                End Using
+            End If
+
+            '123
+            If tipo_doc <> "*" And seccion <> "*" And vigencia <> "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").Where(Function(pub) pub.tipo = tipo_doc).Where(Function(pub) pub.tipo = tipo_doc).Where(Function(pub) pub.vigencia = vigencia).ToList()
+                End Using
+            End If
+
+            'todos
+            If tipo_doc = "*" And seccion = "*" And vigencia = "*" Then
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publicaciones.Lista = context.Publicacion.Include("Documento").ToList()
+                End Using
+            End If
+
+            'Using context As New SVSG_lib.SVSGEntities
+            'context.Configuration.ProxyCreationEnabled = False
+            'publicaciones.Lista = context.Publicacion.Include("Documento").ToList()
+            'End Using
             Return publicaciones
         End If
     End Function

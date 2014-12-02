@@ -32,7 +32,7 @@
     End Sub
 
     Private Sub btnMod_Click(sender As Object, e As RoutedEventArgs) Handles btnMod.Click
-        manager.modificar(CType(gridLista.SelectedItem, SVSG_lib.Publicacion).cod)
+        manager.modificar(CType(gridLista.SelectedItem, itemLista).Codigo)
 
     End Sub
 
@@ -52,23 +52,33 @@
         If comboDoc.SelectedItem = Nothing Or comboSeccion.SelectedValue = Nothing Or comboVigencia.SelectedItem = Nothing Then
             
         Else
-            Dim lista As List(Of SVSG_lib.Publicacion) = manager.cargarLista(comboDoc.SelectedValue.ToString(), comboSeccion.SelectedValue.ToString(), comboVigencia.SelectedValue.ToString())
+            Dim lista As List(Of SVSG_lib.Publicacion)
+            Try
+                lista = manager.cargarLista(comboDoc.SelectedValue.ToString(), comboSeccion.SelectedValue.ToString(), comboVigencia.SelectedValue.ToString())
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
             'gridLista.ItemsSource = lista
-            Dim source As New List(Of itemLista)
-            For Each pub As SVSG_lib.Publicacion In lista
-                Dim il As New itemLista
-                il.Codigo = pub.cod
-                il.Version = pub.documento_version
-                il.Seccion = pub.seccion
-                il.Nombre = pub.Documento.nombre
-                il.Rige = pub.fecha.Date
-                il.Alcance = pub.tipo_alcance
-                il.Sistema = pub.sistema_gestion
-                il.Ambito = pub.ambito
-                il.Tipo = pub.tipo
-                source.Add(il)
-            Next
-            gridLista.ItemsSource = source
+            If lista Is Nothing Then
+                MessageBox.Show("No se encontro ningun resultado")
+            Else
+                Dim source As New List(Of itemLista)
+                For Each pub As SVSG_lib.Publicacion In lista
+                    Dim il As New itemLista
+                    il.Codigo = pub.cod
+                    il.Version = pub.documento_version
+                    il.Seccion = pub.seccion
+                    il.Nombre = pub.Documento.nombre
+                    il.Rige = pub.fecha.Date
+                    il.Alcance = pub.tipo_alcance
+                    il.Sistema = pub.sistema_gestion
+                    il.Ambito = pub.ambito
+                    il.Tipo = pub.tipo
+                    source.Add(il)
+                Next
+                gridLista.ItemsSource = source
+            End If
+
         End If
     End Sub
 
