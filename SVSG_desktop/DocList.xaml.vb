@@ -20,7 +20,8 @@
     End Sub
 
     Private Sub btnMod_Click(sender As Object, e As RoutedEventArgs) Handles btnMod.Click
-        manager.modificar()
+        manager.modificar(CType(gridLista.SelectedItem, SVSG_lib.Publicacion).cod)
+
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As RoutedEventArgs) Handles btnEliminar.Click

@@ -31,6 +31,12 @@
   <wsdl:message name="IListado_publicacionMayor_OutputMessage">
     <wsdl:part name="parameters" element="tns:publicacionMayorResponse" />
   </wsdl:message>
+  <wsdl:message name="IListado_cargarItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:cargarItem" />
+  </wsdl:message>
+  <wsdl:message name="IListado_cargarItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cargarItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="IListado">
     <wsdl:operation name="cargarLista">
       <wsdl:input wsaw:Action="http://tempuri.org/IListado/cargarLista" message="tns:IListado_cargarLista_InputMessage" />
@@ -47,6 +53,10 @@
     <wsdl:operation name="publicacionMayor">
       <wsdl:input wsaw:Action="http://tempuri.org/IListado/publicacionMayor" message="tns:IListado_publicacionMayor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IListado/publicacionMayorResponse" message="tns:IListado_publicacionMayor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/cargarItem" message="tns:IListado_cargarItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/cargarItemResponse" message="tns:IListado_cargarItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IListado" type="tns:IListado">
@@ -80,6 +90,15 @@
     </wsdl:operation>
     <wsdl:operation name="publicacionMayor">
       <soap:operation soapAction="http://tempuri.org/IListado/publicacionMayor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarItem">
+      <soap:operation soapAction="http://tempuri.org/IListado/cargarItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

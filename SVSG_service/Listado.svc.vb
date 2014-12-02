@@ -52,11 +52,39 @@ Public Class Listado
         End If
     End Function
 
-    Public Function modificacionMenor(publicacion As Publicacion) As Boolean Implements IListado.modificacionMenor
+    Public Function modificacionMenor(item As Publicacion) As Boolean Implements IListado.modificacionMenor
+        If item Is Nothing Then
+            Throw New ArgumentNullException("composite")
+        Else
+            Try
 
+            Catch ex As Exception
+
+            End Try
+
+        End If
     End Function
 
     Public Function publicacionMayor(publicacion As Publicacion) As Boolean Implements IListado.publicacionMayor
 
+    End Function
+
+
+    Public Function cargarItem(codigo As String) As Documento Implements IListado.cargarItem
+        If codigo Is Nothing Then
+            Throw New ArgumentNullException("composite")
+        Else
+            Try
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    Dim doc As Documento = context.Documento.Include("Publicacion").First(Function(c) c.cod = codigo)
+                    Return doc
+                End Using
+            Catch ex As Exception
+                Return Nothing
+
+            End Try
+
+        End If
     End Function
 End Class

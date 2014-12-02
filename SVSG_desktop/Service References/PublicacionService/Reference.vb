@@ -29,6 +29,9 @@ Namespace PublicacionService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/publicacionMayor", ReplyAction:="http://tempuri.org/IListado/publicacionMayorResponse")>  _
         Function publicacionMayor(ByVal publicacion As SVSG_lib.Publicacion) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/cargarItem", ReplyAction:="http://tempuri.org/IListado/cargarItemResponse")>  _
+        Function cargarItem(ByVal cod As String) As SVSG_lib.Documento
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -76,6 +79,10 @@ Namespace PublicacionService
         
         Public Function publicacionMayor(ByVal publicacion As SVSG_lib.Publicacion) As Boolean Implements PublicacionService.IListado.publicacionMayor
             Return MyBase.Channel.publicacionMayor(publicacion)
+        End Function
+        
+        Public Function cargarItem(ByVal cod As String) As SVSG_lib.Documento Implements PublicacionService.IListado.cargarItem
+            Return MyBase.Channel.cargarItem(cod)
         End Function
     End Class
 End Namespace

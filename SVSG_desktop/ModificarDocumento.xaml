@@ -3,48 +3,52 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="ProtoDetalle" Height="623.838" Width="958.45" ResizeMode="NoResize">
     <Grid Background="#FFD2E1FF">
-        <Label Content="Código" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Sección" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="94"/>
-        <Label Content="Archivo" HorizontalAlignment="Left" Margin="10,322,0,0" VerticalAlignment="Top" Width="60"/>
-        <Button x:Name="btn_archivo" Content="Seleccionar" HorizontalAlignment="Left" Margin="154,328,0,0" VerticalAlignment="Top" Width="169"/>
-        <Label x:Name="txt_archivo" Content="" HorizontalAlignment="Left" Margin="11,353,0,0" VerticalAlignment="Top" Width="312" Background="#FFEAEAEA" BorderBrush="Black"/>
-        <TextBox x:Name="txt_cod" HorizontalAlignment="Left" Height="23" Margin="154,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
-        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="154,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
-        <Label Content="Detalle de de cambios:" HorizontalAlignment="Left" Margin="11,384,0,0" VerticalAlignment="Top" Width="195"/>
-        <TextBox x:Name="txt_detalle" HorizontalAlignment="Left" Height="129" Margin="10,415,0,0" TextWrapping="Wrap" Text="Agregue los detalles de la entrada aqui..." VerticalAlignment="Top" Width="313"/>
-        <Label Content="Vista previa:" HorizontalAlignment="Left" Margin="376,10,0,0" VerticalAlignment="Top" Width="108"/>
-        <ComboBox x:Name="combo_seccion" HorizontalAlignment="Left" Margin="155,171,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="941*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Código" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
+        <Label Content="Sección" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
+        <Label Content="Archivo" HorizontalAlignment="Left" Margin="10,322,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_archivo" Content="Seleccionar" HorizontalAlignment="Left" Margin="143,328,0,0" VerticalAlignment="Top" Width="169" Grid.Column="1"/>
+        <Label x:Name="txt_archivo" Content="" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="312" Background="#FFEAEAEA" BorderBrush="Black" Grid.Column="1"/>
+        <TextBox x:Name="txt_cod" HorizontalAlignment="Left" Height="23" Margin="143,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="143,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
+        <Label Content="Detalle de de cambios:" HorizontalAlignment="Left" Margin="0,384,0,0" VerticalAlignment="Top" Width="195" Grid.Column="1"/>
+        <TextBox x:Name="txt_detalle" HorizontalAlignment="Left" Height="129" Margin="10,415,0,0" TextWrapping="Wrap" Text="Agregue los detalles de la entrada aqui..." VerticalAlignment="Top" Width="313" Grid.ColumnSpan="2"/>
+        <Label Content="Vista previa:" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top" Width="108" Grid.Column="1"/>
+        <ComboBox x:Name="combo_seccion" HorizontalAlignment="Left" Margin="144,171,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
             <ComboBoxItem Content="Bioquímica"/>
         </ComboBox>
-        <Label Content="Detalle de protocolo:" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="130"/>
-        <Button Content="Actualización mayor" HorizontalAlignment="Left" Margin="828,557,0,0" VerticalAlignment="Top" Width="112"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="10,557,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Tipo" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="94"/>
-        <ComboBox x:Name="combo_tipo_doc" HorizontalAlignment="Left" Margin="155,202,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento">
+        <Label Content="Detalle de protocolo:" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2"/>
+        <Button Content="Actualización mayor" HorizontalAlignment="Left" Margin="817,557,0,0" VerticalAlignment="Top" Width="112" Grid.Column="1"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="10,557,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Label Content="Tipo" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="combo_tipo_doc" HorizontalAlignment="Left" Margin="144,202,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
             <ComboBoxItem x:Name="Balística1" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
         </ComboBox>
-        <Label Content="Versión" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox x:Name="txt_version" HorizontalAlignment="Left" Height="23" Margin="154,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
-        <Label Content="Ambito" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="94"/>
-        <ComboBox x:Name="combo_ambito" HorizontalAlignment="Left" Margin="155,234,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento">
+        <Label Content="Versión" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_version" HorizontalAlignment="Left" Height="23" Margin="143,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
+        <Label Content="Ambito" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="combo_ambito" HorizontalAlignment="Left" Margin="144,234,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
             <ComboBoxItem x:Name="Balística2" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
         </ComboBox>
-        <Label Content="Sistema de gestión&#xD;&#xA;" HorizontalAlignment="Left" Margin="11,261,0,0" VerticalAlignment="Top" Width="115" Height="26"/>
-        <ComboBox x:Name="combo_sistema_gestion" HorizontalAlignment="Left" Margin="155,265,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento">
+        <Label Content="Sistema de gestión&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,261,0,0" VerticalAlignment="Top" Width="115" Height="26" Grid.Column="1"/>
+        <ComboBox x:Name="combo_sistema_gestion" HorizontalAlignment="Left" Margin="144,265,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
             <ComboBoxItem x:Name="Balística3" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
         </ComboBox>
-        <Label Content="Tipo de alcance" HorizontalAlignment="Left" Margin="11,292,0,0" VerticalAlignment="Top" Width="115" Height="26"/>
-        <ComboBox x:Name="combo_tipo_alcance" HorizontalAlignment="Left" Margin="154,296,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento">
+        <Label Content="Tipo de alcance" HorizontalAlignment="Left" Margin="0,292,0,0" VerticalAlignment="Top" Width="115" Height="26" Grid.Column="1"/>
+        <ComboBox x:Name="combo_tipo_alcance" HorizontalAlignment="Left" Margin="143,296,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
             <ComboBoxItem x:Name="Balística5" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
         </ComboBox>
-        <Label Content="Alcance:" HorizontalAlignment="Left" Margin="377,384,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox x:Name="txt_alcance" HorizontalAlignment="Left" Height="129" Margin="376,415,0,0" TextWrapping="Wrap" Text="Agregue los detalles del alcance" VerticalAlignment="Top" Width="313"/>
-        <Label Content="Responsable &#xD;&#xA;de actualización" HorizontalAlignment="Left" Margin="11,130,0,0" VerticalAlignment="Top" Width="104"/>
-        <TextBox x:Name="txt_responsable" HorizontalAlignment="Left" Height="23" Margin="154,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
-        <WebBrowser x:Name="web_documento" HorizontalAlignment="Left" Height="338" Margin="376,41,0,0" VerticalAlignment="Top" Width="313"/>
-        <Label x:Name="txt_historico" Content="" HorizontalAlignment="Left" Margin="712,39,0,0" VerticalAlignment="Top" Height="503" Width="228" Background="#FFEBEBEB"/>
-        <Button Content="Actualización menor" HorizontalAlignment="Left" Margin="575,557,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Histórico de cambios" HorizontalAlignment="Left" Margin="712,8,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label Content="Alcance:" HorizontalAlignment="Left" Margin="366,384,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <TextBox x:Name="txt_alcance" HorizontalAlignment="Left" Height="129" Margin="365,415,0,0" TextWrapping="Wrap" Text="Agregue los detalles del alcance" VerticalAlignment="Top" Width="313" Grid.Column="1"/>
+        <Label Content="Responsable &#xD;&#xA;de actualización" HorizontalAlignment="Left" Margin="0,130,0,0" VerticalAlignment="Top" Width="104" Grid.Column="1"/>
+        <TextBox x:Name="txt_responsable" HorizontalAlignment="Left" Height="23" Margin="143,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
+        <WebBrowser x:Name="web_documento" HorizontalAlignment="Left" Height="338" Margin="365,41,0,0" VerticalAlignment="Top" Width="313" Grid.Column="1"/>
+        <Label x:Name="txt_historico" Content="" HorizontalAlignment="Left" Margin="701,39,0,0" VerticalAlignment="Top" Height="503" Width="228" Background="#FFEBEBEB" Grid.Column="1"/>
+        <Button Content="Actualización menor" HorizontalAlignment="Left" Margin="564,557,0,0" VerticalAlignment="Top" Width="114" Grid.Column="1"/>
+        <Label Content="Histórico de cambios" HorizontalAlignment="Left" Margin="701,8,0,0" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
     </Grid>
 </Window>

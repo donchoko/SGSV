@@ -9,9 +9,25 @@ Public Class ListadoManager
         cd.Show()
     End Sub
 
-    Public Sub modificar()
-        Dim md As ModificarDocumento = New ModificarDocumento()
-        md.Show()
+    Public Sub modificar(ByVal codigo As String)
+        Dim doc As SVSG_lib.Documento
+        Dim client As New PublicacionService.ListadoClient()
+        doc = client.cargarItem(codigo)
+        Dim pub As SVSG_lib.Publicacion
+        For Each p In doc.Publicacion
+            If p.vigencia = "vigente" Then
+                pub = p
+            End If
+        Next
+
+        If pub Is Nothing Then
+            MessageBox.Show("No hay ninguna publicacion vigente de dicho documento")
+        Else
+            Dim md As ModificarDocumento = New ModificarDocumento(doc, pub)
+            md.Show()
+        End If
+
+        
     End Sub
 
     Public Sub abrirHistorico()

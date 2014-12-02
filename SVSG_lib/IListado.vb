@@ -16,6 +16,10 @@ Public Interface IListado
 
     <OperationContract()>
     Function publicacionMayor(ByVal publicacion As Publicacion) As Boolean
+
+    <OperationContract()>
+    Function cargarItem(ByVal cod As String) As Documento
+
 End Interface
 
 <DataContract()>
