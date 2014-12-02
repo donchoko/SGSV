@@ -9,22 +9,37 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.Runtime.Serialization
 
+<DataContract(IsReference:=True)>
 Partial Public Class Publicacion
+    <DataMember()>
     Public Property cod As String
+    <DataMember()>
     Public Property documento_version As String
+    <DataMember()>
     Public Property detalle As String
+    <DataMember()>
     Public Property archivo As Byte()
+    <DataMember()>
     Public Property fecha As Date
+    <DataMember()>
     Public Property publicado_por As String
+    <DataMember()>
     Public Property tipo As String
+    <DataMember()>
     Public Property seccion As String
+    <DataMember()>
     Public Property ambito As String
+    <DataMember()>
     Public Property sistema_gestion As String
+    <DataMember()>
     Public Property procedencia As String
+    <DataMember()>
     Public Property tipo_alcance As String
+    <DataMember()>
     Public Property vigencia As String
-
+    <DataMember()>
     Public Overridable Property Documento As Documento
 
 End Class

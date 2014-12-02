@@ -26,7 +26,7 @@ Public Class Listado
 
             Using context As New SVSG_lib.SVSGEntities
                 context.Configuration.ProxyCreationEnabled = False
-                publicaciones.Lista = context.Publicacion.ToList()
+                publicaciones.Lista = context.Publicacion.Include("Documento").ToList()
             End Using
             Return publicaciones
         End If
@@ -57,7 +57,10 @@ Public Class Listado
             Throw New ArgumentNullException("composite")
         Else
             Try
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
 
+                End Using
             Catch ex As Exception
 
             End Try

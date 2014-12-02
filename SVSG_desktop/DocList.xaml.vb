@@ -9,6 +9,18 @@
     Private sis_gestion() As String = {"Calidad", "Otro"}
     Private vigencias() As String = {"*", "Vigente", "Obsolteo"}
 
+    Public Structure itemLista
+        Public Property Codigo As String
+        Public Property Nombre As String
+        Public Property Seccion As String
+        Public Property Version As String
+        Public Property Rige As String
+        Public Property Alcance As String
+        Public Property Sistema As String
+        Public Property Ambito As String
+        Public Property Tipo As String
+    End Structure
+
     Public Sub New()
         InitializeComponent()
         cargarCombos()
@@ -41,9 +53,25 @@
             
         Else
             Dim lista As List(Of SVSG_lib.Publicacion) = manager.cargarLista(comboDoc.SelectedValue.ToString(), comboSeccion.SelectedValue.ToString(), comboVigencia.SelectedValue.ToString())
-            gridLista.ItemsSource = lista
+            'gridLista.ItemsSource = lista
+            Dim source As New List(Of itemLista)
+            For Each pub As SVSG_lib.Publicacion In lista
+                Dim il As New itemLista
+                il.Codigo = pub.cod
+                il.Version = pub.documento_version
+                il.Seccion = pub.seccion
+                il.Nombre = pub.Documento.nombre
+                il.Rige = pub.fecha.Date
+                il.Alcance = pub.tipo_alcance
+                il.Sistema = pub.sistema_gestion
+                il.Ambito = pub.ambito
+                il.Tipo = pub.tipo
+                source.Add(il)
+            Next
+            gridLista.ItemsSource = source
         End If
     End Sub
+
 
     Private Sub cargarCombos()
         comboSeccion.ItemsSource = secciones

@@ -11,8 +11,12 @@ Public Class ListadoManager
 
     Public Sub modificar(ByVal codigo As String)
         Dim doc As SVSG_lib.Documento
-        Dim client As New PublicacionService.ListadoClient()
-        doc = client.cargarItem(codigo)
+        Try
+            Dim client As New PublicacionService.ListadoClient()
+            doc = client.cargarItem(codigo)
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
+        End Try
         Dim pub As SVSG_lib.Publicacion
         For Each p In doc.Publicacion
             If p.vigencia = "vigente" Then

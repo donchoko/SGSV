@@ -9,14 +9,21 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.Runtime.Serialization
 
+<DataContract(IsReference:=True)>
 Partial Public Class Documento
+    <DataMember()>
     Public Property cod As String
+    <DataMember()>
     Public Property nombre As String
+    <DataMember()>
     Public Property alcance As String
+    <DataMember()>
     Public Property encargado As String
+    <DataMember()>
     Public Property creado As Date
-
+    <DataMember()>
     Public Overridable Property Publicacion As ICollection(Of Publicacion) = New HashSet(Of Publicacion)
 
 End Class
