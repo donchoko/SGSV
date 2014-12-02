@@ -13,7 +13,33 @@
   </xs:complexType>
   <xs:element name="ArrayOfPublicacion" nillable="true" type="tns:ArrayOfPublicacion" />
   <xs:complexType name="Publicacion">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="tns:Documento" />
+      <xs:element minOccurs="0" name="ambito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="archivo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="cod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="detalle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="documento_version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="procedencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="publicado_por" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="seccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sistema_gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo_alcance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vigencia" nillable="true" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
   <xs:element name="Publicacion" nillable="true" type="tns:Publicacion" />
+  <xs:complexType name="Documento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Publicacion" nillable="true" type="tns:ArrayOfPublicacion" />
+      <xs:element minOccurs="0" name="alcance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="creado" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="encargado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documento" nillable="true" type="tns:Documento" />
 </xs:schema>

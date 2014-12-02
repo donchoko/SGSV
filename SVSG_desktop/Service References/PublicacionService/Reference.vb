@@ -20,6 +20,15 @@ Namespace PublicacionService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/cargarLista", ReplyAction:="http://tempuri.org/IListado/cargarListaResponse")>  _
         Function cargarLista(ByVal tipo_doc As String, ByVal seccion As String, ByVal vigencia As String) As SVSG_lib.Publicaciones
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/crearDocumento", ReplyAction:="http://tempuri.org/IListado/crearDocumentoResponse")>  _
+        Function crearDocumento(ByVal publicacion As SVSG_lib.Publicacion) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/modificacionMenor", ReplyAction:="http://tempuri.org/IListado/modificacionMenorResponse")>  _
+        Function modificacionMenor(ByVal publicacion As SVSG_lib.Publicacion) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/publicacionMayor", ReplyAction:="http://tempuri.org/IListado/publicacionMayorResponse")>  _
+        Function publicacionMayor(ByVal publicacion As SVSG_lib.Publicacion) As Boolean
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -55,6 +64,18 @@ Namespace PublicacionService
         
         Public Function cargarLista(ByVal tipo_doc As String, ByVal seccion As String, ByVal vigencia As String) As SVSG_lib.Publicaciones Implements PublicacionService.IListado.cargarLista
             Return MyBase.Channel.cargarLista(tipo_doc, seccion, vigencia)
+        End Function
+        
+        Public Function crearDocumento(ByVal publicacion As SVSG_lib.Publicacion) As Boolean Implements PublicacionService.IListado.crearDocumento
+            Return MyBase.Channel.crearDocumento(publicacion)
+        End Function
+        
+        Public Function modificacionMenor(ByVal publicacion As SVSG_lib.Publicacion) As Boolean Implements PublicacionService.IListado.modificacionMenor
+            Return MyBase.Channel.modificacionMenor(publicacion)
+        End Function
+        
+        Public Function publicacionMayor(ByVal publicacion As SVSG_lib.Publicacion) As Boolean Implements PublicacionService.IListado.publicacionMayor
+            Return MyBase.Channel.publicacionMayor(publicacion)
         End Function
     End Class
 End Namespace

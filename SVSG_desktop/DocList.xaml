@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="DocList" Height="609" Width="765" ResizeMode="NoResize">
     <Grid Background="#FFD2E1FF" Margin="0,0,0,0">
-        <DataGrid x:Name="gridLista" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="501" Width="572">
+        <DataGrid x:Name="gridLista" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="501" Width="572" CanUserDeleteRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="COD"/>
                 <DataGridTextColumn Header="Nombre"/>

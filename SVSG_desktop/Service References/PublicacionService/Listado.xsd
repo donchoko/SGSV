@@ -17,4 +17,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="crearDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SVSG_lib" minOccurs="0" name="publicacion" nillable="true" type="q2:Publicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="crearDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="crearDocumentoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modificacionMenor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SVSG_lib" minOccurs="0" name="publicacion" nillable="true" type="q3:Publicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modificacionMenorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modificacionMenorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="publicacionMayor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SVSG_lib" minOccurs="0" name="publicacion" nillable="true" type="q4:Publicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="publicacionMayorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="publicacionMayorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

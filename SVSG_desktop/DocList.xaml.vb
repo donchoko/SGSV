@@ -37,9 +37,10 @@
 
     Private Sub btnCargar_Click(sender As Object, e As RoutedEventArgs) Handles btnCargar.Click
         If comboDoc.SelectedItem = Nothing Or comboSeccion.SelectedValue = Nothing Or comboVigencia.SelectedItem = Nothing Then
-
+            
         Else
-            'manager.cargarLista(comboSeccion.SelectedValue.ToString(), comboDoc.SelectedValue.ToString(), comboVigencia.SelectedValue.ToString())
+            Dim lista As List(Of SVSG_lib.Publicacion) = manager.cargarLista(comboDoc.SelectedValue.ToString(), comboSeccion.SelectedValue.ToString(), comboVigencia.SelectedValue.ToString())
+            gridLista.ItemsSource = lista
         End If
     End Sub
 

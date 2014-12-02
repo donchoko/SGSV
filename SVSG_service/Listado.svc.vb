@@ -25,10 +25,35 @@ Public Class Listado
             End If
 
             Using context As New SVSG_lib.SVSGEntities
-                publicaciones.Lista = context.Publicacion.ToList().Where(Function(pub As SVSG_lib.Publicacion) pub.Equals(p))
+                context.Configuration.ProxyCreationEnabled = False
+                publicaciones.Lista = context.Publicacion.ToList()
             End Using
             Return publicaciones
         End If
     End Function
 
+    Public Function crearDocumento(_publicacion As Publicacion) As Boolean Implements IListado.crearDocumento
+        If _publicacion Is Nothing Then
+            Throw New ArgumentNullException("composite")
+        Else
+            Try
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    context.Documento.Add(_publicacion.Documento)
+                    context.Publicacion.Add(_publicacion)
+                End Using
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End If
+    End Function
+
+    Public Function modificacionMenor(publicacion As Publicacion) As Boolean Implements IListado.modificacionMenor
+
+    End Function
+
+    Public Function publicacionMayor(publicacion As Publicacion) As Boolean Implements IListado.publicacionMayor
+
+    End Function
 End Class

@@ -1,4 +1,6 @@
 ﻿Imports System.Windows
+Imports SVSG_lib
+
 Public Class ListadoManager
     'Implements SVSG_lib.IListado
 
@@ -26,10 +28,14 @@ Public Class ListadoManager
         End If
     End Sub
 
-    '    Public Function cargarLista(seccion As String, tipo As String, vigencia As String) As List(Of SVSG_lib.Documento) Implements SVSG_lib.IListado.cargarLista
-    '       Dim listado As List(Of SVSG_lib.Documento)
-    '       Return listado
-    '    End Function
+    Public Function cargarLista(tipo As String, seccion As String, vigencia As String) As List(Of SVSG_lib.Publicacion)
+        Dim client As New PublicacionService.ListadoClient()
+        Dim l As Publicaciones
+        l = client.cargarLista(tipo, seccion, vigencia)
+        client.Close()
+        Return l.Lista
+    End Function
+
 
 
 
