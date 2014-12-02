@@ -61,6 +61,7 @@ Public Class CrearDocumento
             d.nombre = txt_nombre.Text
             d.encargado = txt_responsable.Text
             d.creado = Date.Today
+            d.alcance = txt_alcance.Text
 
             p.ambito = combo_ambito.Text
             p.cod = txt_cod.Text
@@ -77,6 +78,7 @@ Public Class CrearDocumento
             p.Documento = d
 
             dm.crearDocumento(p)
+            Me.Close()
         Else
             MessageBox.Show("ERORR: Se necesita completar todos los campos primero", MessageBoxImage.Warning)
         End If

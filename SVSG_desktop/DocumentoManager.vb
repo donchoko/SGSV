@@ -11,6 +11,8 @@ Public Class DocumentoManager
         Else
             System.Windows.MessageBox.Show("Hubo un error en la creación del documento", MessageBoxImage.Error)
         End If
+        client.Close()
+
     End Sub
 
     Public Function convertir_Archivo_ArregloBytes(ByVal RutaDireccion As String) As Byte()

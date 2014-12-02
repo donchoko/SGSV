@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SVSGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="SVSGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="Documento">
           <Key>
             <PropertyRef Name="cod" />
@@ -32,7 +32,7 @@
           <Property Name="cod" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="documento_version" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="detalle" Type="varchar" MaxLength="1000" />
-          <Property Name="archivo" Type="varbinary(max)" Nullable="false" />
+          <Property Name="archivo" Type="varbinary(max)" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="publicado_por" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="tipo" Type="varchar" MaxLength="30" Nullable="false" />
@@ -64,8 +64,7 @@
             <End Role="Publicacion" EntitySet="Publicacion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SVSGModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -97,7 +96,7 @@
           <Property Name="cod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="documento_version" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="detalle" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="archivo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="archivo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="publicado_por" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
@@ -121,7 +120,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SVSGEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SVSGEntities" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="Documento" EntityType="Self.Documento" />
           <EntitySet Name="Historico" EntityType="Self.Historico" />
           <EntitySet Name="Publicacion" EntityType="Self.Publicacion" />

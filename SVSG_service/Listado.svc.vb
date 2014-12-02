@@ -40,7 +40,10 @@ Public Class Listado
                 Using context As New SVSG_lib.SVSGEntities
                     context.Configuration.ProxyCreationEnabled = False
                     context.Documento.Add(_publicacion.Documento)
+                    _publicacion.Documento.Publicacion = Nothing
                     context.Publicacion.Add(_publicacion)
+                    context.SaveChanges()
+
                 End Using
                 Return True
             Catch ex As Exception
