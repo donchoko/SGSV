@@ -32,6 +32,9 @@ Namespace PublicacionService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/cargarItem", ReplyAction:="http://tempuri.org/IListado/cargarItemResponse")>  _
         Function cargarItem(ByVal cod As String) As SVSG_lib.Documento
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IListado/eliminar", ReplyAction:="http://tempuri.org/IListado/eliminarResponse")>  _
+        Function eliminar(ByVal cod As String, ByVal ver As String) As Boolean
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -83,6 +86,10 @@ Namespace PublicacionService
         
         Public Function cargarItem(ByVal cod As String) As SVSG_lib.Documento Implements PublicacionService.IListado.cargarItem
             Return MyBase.Channel.cargarItem(cod)
+        End Function
+        
+        Public Function eliminar(ByVal cod As String, ByVal ver As String) As Boolean Implements PublicacionService.IListado.eliminar
+            Return MyBase.Channel.eliminar(cod, ver)
         End Function
     End Class
 End Namespace

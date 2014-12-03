@@ -19,6 +19,7 @@
         Public Property Sistema As String
         Public Property Ambito As String
         Public Property Tipo As String
+        Public Property Vigencia As String
     End Structure
 
     Public Sub New()
@@ -37,8 +38,12 @@
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As RoutedEventArgs) Handles btnEliminar.Click
-        If gridLista.SelectedItem <> Nothing Then
-            manager.eliminar(gridLista.SelectedItem.ToString())
+        If gridLista.SelectedItem IsNot Nothing Then
+            Dim p As itemLista = gridLista.SelectedItem
+            If p.Vigencia <> "no vigente" Then
+                manager.eliminar(p.Codigo, p.Version, p.Nombre)
+                cargarLista()
+            End If
         Else
             MessageBox.Show("No se ha seleccionado ningun documento")
         End If
@@ -49,8 +54,20 @@
     End Sub
 
     Private Sub btnCargar_Click(sender As Object, e As RoutedEventArgs) Handles btnCargar.Click
+        cargarLista()
+    End Sub
+
+
+    Private Sub cargarCombos()
+        comboSeccion.ItemsSource = secciones
+        comboVigencia.ItemsSource = vigencias
+        comboDoc.ItemsSource = tipos
+
+    End Sub
+
+    Private Sub cargarLista()
         If comboDoc.SelectedItem = Nothing Or comboSeccion.SelectedValue = Nothing Or comboVigencia.SelectedItem = Nothing Then
-            
+
         Else
             Dim lista As List(Of SVSG_lib.Publicacion)
             Try
@@ -74,19 +91,26 @@
                     il.Sistema = pub.sistema_gestion
                     il.Ambito = pub.ambito
                     il.Tipo = pub.tipo
+                    il.Vigencia = pub.vigencia
                     source.Add(il)
                 Next
                 gridLista.ItemsSource = source
-            End If
+                gridLista.UpdateLayout()
+                For Each pub As itemLista In gridLista.ItemsSource
+                    Dim row As DataGridRow
+                    row = gridLista.ItemContainerGenerator.ContainerFromItem(pub)
+                    If pub.Vigencia = "vigente" Then
+                        row.Background = Brushes.GreenYellow
+                    ElseIf pub.Vigencia = "no vigente" Then
+                        row.Background = Brushes.LightPink
+                    End If
 
+                Next
+            End If
         End If
     End Sub
 
-
-    Private Sub cargarCombos()
-        comboSeccion.ItemsSource = secciones
-        comboVigencia.ItemsSource = vigencias
-        comboDoc.ItemsSource = tipos
+    Private Sub gridLista_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles gridLista.SelectionChanged
 
     End Sub
 End Class

@@ -143,4 +143,36 @@ Public Class Listado
 
         End If
     End Function
+
+    Public Function eliminar(cod As String, ver As String) As Boolean Implements IListado.eliminar
+        If cod Is Nothing And ver Is Nothing Then
+            Throw New ArgumentNullException("composite")
+            Return False
+        Else
+            Try
+                Dim publi As Publicacion
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publi = context.Publicacion.Where(Function(p) p.cod = cod).Where(Function(p) p.documento_version = ver).First()
+                End Using
+
+                If publi IsNot Nothing Then
+                    publi.vigencia = "no vigente"
+                    Using context As New SVSG_lib.SVSGEntities
+                        context.Configuration.ProxyCreationEnabled = False
+                        context.Entry(publi).State = System.Data.EntityState.Modified
+                        context.SaveChanges()
+                    End Using
+                Else
+                    Throw New NullReferenceException("La publicación no pudo ser encontrada")
+                End If
+
+
+
+            Catch ex As Exception
+                System.Console.Write(ex)
+                Return False
+            End Try
+        End If
+    End Function
 End Class

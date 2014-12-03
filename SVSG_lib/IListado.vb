@@ -20,6 +20,9 @@ Public Interface IListado
     <OperationContract()>
     Function cargarItem(ByVal cod As String) As Documento
 
+    <OperationContract()>
+    Function eliminar(ByVal cod As String, ByVal ver As String) As Boolean
+
 End Interface
 
 <DataContract()>

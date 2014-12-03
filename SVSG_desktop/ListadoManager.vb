@@ -39,12 +39,16 @@ Public Class ListadoManager
         h.Show()
     End Sub
 
-    Public Sub eliminar(nombre As String)
-        Dim result As Integer = MessageBox.Show("Desea eliminar el documento " + nombre, "caption", MessageBoxButton.YesNo)
+    Public Sub eliminar(ByVal cod As String, ByVal ver As String, ByVal nombre As String)
+        Dim result As Integer = MessageBox.Show("Desea eliminar la publicación " + cod +" "+ nombre+" Version "+ver, "caption", MessageBoxButton.YesNo)
         If result = MessageBoxResult.Yes Then
-            MessageBox.Show("Cancel pressed")
-        ElseIf result = MessageBoxResult.No Then
-            MessageBox.Show("No pressed")
+            Try
+                Dim client As New PublicacionService.ListadoClient()
+                client.eliminar(cod, ver)
+                client.Close()
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 

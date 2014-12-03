@@ -15,6 +15,7 @@
   <xs:element name="ArrayOfPublicacion" nillable="true" type="tns:ArrayOfPublicacion" />
   <xs:complexType name="Publicacion">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="tns:Documento" />
       <xs:element minOccurs="0" name="ambito" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="archivo" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="cod" nillable="true" type="xs:string" />
