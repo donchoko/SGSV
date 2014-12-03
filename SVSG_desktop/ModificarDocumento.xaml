@@ -13,35 +13,25 @@
         <Label Content="Archivo" HorizontalAlignment="Left" Margin="10,322,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
         <Button x:Name="btn_archivo" Content="Seleccionar" HorizontalAlignment="Left" Margin="143,328,0,0" VerticalAlignment="Top" Width="169" Grid.Column="1"/>
         <Label x:Name="txt_archivo" Content="" HorizontalAlignment="Left" Margin="0,353,0,0" VerticalAlignment="Top" Width="312" Background="#FFEAEAEA" BorderBrush="Black" Grid.Column="1"/>
-        <TextBox x:Name="txt_cod" HorizontalAlignment="Left" Height="23" Margin="143,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
+        <TextBox x:Name="txt_cod" HorizontalAlignment="Left" Height="23" Margin="143,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1" IsEnabled="False"/>
         <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="143,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
         <Label Content="Detalle de de cambios:" HorizontalAlignment="Left" Margin="0,384,0,0" VerticalAlignment="Top" Width="195" Grid.Column="1"/>
         <TextBox x:Name="txt_detalle" HorizontalAlignment="Left" Height="129" Margin="10,415,0,0" TextWrapping="Wrap" Text="Agregue los detalles de la entrada aqui..." VerticalAlignment="Top" Width="313" Grid.ColumnSpan="2"/>
         <Label Content="Vista previa:" HorizontalAlignment="Left" Margin="365,10,0,0" VerticalAlignment="Top" Width="108" Grid.Column="1"/>
-        <ComboBox x:Name="combo_seccion" HorizontalAlignment="Left" Margin="144,171,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
-            <ComboBoxItem Content="Bioquímica"/>
-        </ComboBox>
+        <ComboBox x:Name="combo_seccion" HorizontalAlignment="Left" Margin="144,171,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Detalle de protocolo:" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2"/>
-        <Button Content="Actualización mayor" HorizontalAlignment="Left" Margin="817,557,0,0" VerticalAlignment="Top" Width="112" Grid.Column="1"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="10,557,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_mayor" Content="Actualización mayor" HorizontalAlignment="Left" Margin="817,557,0,0" VerticalAlignment="Top" Width="112" Grid.Column="1"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="10,557,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="Button_Click"/>
         <Label Content="Tipo" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="combo_tipo_doc" HorizontalAlignment="Left" Margin="144,202,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
-            <ComboBoxItem x:Name="Balística1" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
-        </ComboBox>
+        <ComboBox x:Name="combo_tipo_doc" HorizontalAlignment="Left" Margin="144,202,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Versión" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txt_version" HorizontalAlignment="Left" Height="23" Margin="143,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
         <Label Content="Ambito" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="combo_ambito" HorizontalAlignment="Left" Margin="144,234,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
-            <ComboBoxItem x:Name="Balística2" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
-        </ComboBox>
+        <ComboBox x:Name="combo_ambito" HorizontalAlignment="Left" Margin="144,234,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Sistema de gestión&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,261,0,0" VerticalAlignment="Top" Width="115" Height="26" Grid.Column="1"/>
-        <ComboBox x:Name="combo_sistema_gestion" HorizontalAlignment="Left" Margin="144,265,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
-            <ComboBoxItem x:Name="Balística3" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
-        </ComboBox>
+        <ComboBox x:Name="combo_sistema_gestion" HorizontalAlignment="Left" Margin="144,265,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Tipo de alcance" HorizontalAlignment="Left" Margin="0,292,0,0" VerticalAlignment="Top" Width="115" Height="26" Grid.Column="1"/>
-        <ComboBox x:Name="combo_tipo_alcance" HorizontalAlignment="Left" Margin="143,296,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1">
-            <ComboBoxItem x:Name="Balística5" Content="ComboBoxItem" HorizontalAlignment="Left" Width="167"/>
-        </ComboBox>
+        <ComboBox x:Name="combo_tipo_alcance" HorizontalAlignment="Left" Margin="143,296,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Alcance:" HorizontalAlignment="Left" Margin="366,384,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
         <TextBox x:Name="txt_alcance" HorizontalAlignment="Left" Height="129" Margin="365,415,0,0" TextWrapping="Wrap" Text="Agregue los detalles del alcance" VerticalAlignment="Top" Width="313" Grid.Column="1"/>
         <Label Content="Responsable &#xD;&#xA;de actualización" HorizontalAlignment="Left" Margin="0,130,0,0" VerticalAlignment="Top" Width="104" Grid.Column="1"/>

@@ -18,20 +18,23 @@ Public Class ListadoManager
             MessageBox.Show(ex.ToString())
         End Try
         Dim pub As SVSG_lib.Publicacion
-        For Each p In doc.Publicacion
-            If p.vigencia = "vigente" Then
-                pub = p
-            End If
-        Next
+        doc.Publicacion.OrderByDescending(Function(p) p.fecha)
+        pub = doc.Publicacion.Last()
+        'For Each p In doc.Publicacion
+        'If p.vigencia = "vigente" Then
+        '    pub = p
+        'End If
+
+        'Next
 
         If pub Is Nothing Then
-            MessageBox.Show("No hay ninguna publicacion vigente de dicho documento")
+            'MessageBox.Show("No hay ninguna publicacion vigente de dicho documento")
         Else
             Dim md As ModificarDocumento = New ModificarDocumento(doc, pub)
             md.Show()
         End If
 
-        
+
     End Sub
 
     Public Sub abrirHistorico()

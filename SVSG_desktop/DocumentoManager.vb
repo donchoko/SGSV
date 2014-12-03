@@ -51,6 +51,16 @@ Public Class DocumentoManager
 
     End Function
 
+    Public Sub publicacionMayor(ByVal p As SVSG_lib.Publicacion)
+        Dim client As New PublicacionService.ListadoClient
+        If client.publicacionMayor(p) Then
+            System.Windows.MessageBox.Show("Se creo una nueva publiación")
+        Else
+            System.Windows.MessageBox.Show("Hubo un error en la creación de la publicación", MessageBoxImage.Error)
+        End If
+        client.Close()
+
+    End Sub
 
 End Class
 

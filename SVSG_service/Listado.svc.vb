@@ -122,7 +122,39 @@ Public Class Listado
     End Function
 
     Public Function publicacionMayor(publicacion As Publicacion) As Boolean Implements IListado.publicacionMayor
+        If publicacion Is Nothing Then
+            Throw New ArgumentNullException("composite")
+        Else
+            Try
+                Dim publi_vieja As Publicacion
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    publi_vieja = context.Publicacion.Include("Documento").Where(Function(p) p.cod = publicacion.cod).Where(Function(p) p.vigencia = "vigente").FirstOrDefault()
+                End Using
 
+                If publi_vieja IsNot Nothing Then
+                    publi_vieja.vigencia = "no vigente"
+                    publicacion.Documento = publi_vieja.Documento
+                    Using context As New SVSG_lib.SVSGEntities
+                        context.Configuration.ProxyCreationEnabled = False
+                        context.Entry(publi_vieja).State = System.Data.EntityState.Modified
+                        context.Publicacion.Add(publicacion)
+                        context.SaveChanges()
+                    End Using
+                Else
+                    publicacion.Documento = Nothing
+                    Using context As New SVSG_lib.SVSGEntities
+                        context.Configuration.ProxyCreationEnabled = False
+                        context.Publicacion.Add(publicacion)
+                        context.SaveChanges()
+                    End Using
+                End If
+                Return True
+            Catch ex As Exception
+                System.Console.Write(ex)
+                Return False
+            End Try
+        End If
     End Function
 
 

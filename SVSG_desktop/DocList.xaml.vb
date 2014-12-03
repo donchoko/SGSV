@@ -7,7 +7,7 @@
     Private secciones() As String = {"*", "1", "2", "3"}
     Private alcance() As String = {"General", "Especifico"}
     Private sis_gestion() As String = {"Calidad", "Otro"}
-    Private vigencias() As String = {"*", "Vigente", "Obsolteo"}
+    Private vigencias() As String = {"*", "Vigente", "No Vigente"}
 
     Public Structure itemLista
         Public Property Codigo As String
@@ -33,8 +33,11 @@
     End Sub
 
     Private Sub btnMod_Click(sender As Object, e As RoutedEventArgs) Handles btnMod.Click
-        manager.modificar(CType(gridLista.SelectedItem, itemLista).Codigo)
-
+        If gridLista.SelectedItem IsNot Nothing Then
+            manager.modificar(CType(gridLista.SelectedItem, itemLista).Codigo)
+        Else
+            MessageBox.Show("No se ha seleccionado ninguna publicación")
+        End If
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As RoutedEventArgs) Handles btnEliminar.Click
@@ -45,7 +48,7 @@
                 cargarLista()
             End If
         Else
-            MessageBox.Show("No se ha seleccionado ningun documento")
+            MessageBox.Show("No se ha seleccionado ninguna publicación")
         End If
     End Sub
 
@@ -94,23 +97,29 @@
                     il.Vigencia = pub.vigencia
                     source.Add(il)
                 Next
-                gridLista.ItemsSource = source
-                gridLista.UpdateLayout()
-                For Each pub As itemLista In gridLista.ItemsSource
-                    Dim row As DataGridRow
-                    row = gridLista.ItemContainerGenerator.ContainerFromItem(pub)
-                    If pub.Vigencia = "vigente" Then
-                        row.Background = Brushes.GreenYellow
-                    ElseIf pub.Vigencia = "no vigente" Then
-                        row.Background = Brushes.LightPink
-                    End If
+                'gridLista.Items.Clear()
 
-                Next
+                gridLista.ItemsSource = source
+                'gridLista.UpdateLayout()
+                'For Each pub As itemLista In gridLista.ItemsSource
+                'Dim row As DataGridRow
+                'row = gridLista.ItemContainerGenerator.ContainerFromItem(pub)
+                'If pub.Vigencia = "vigente" Then
+                'row.Background = Brushes.GreenYellow
+                'ElseIf pub.Vigencia = "no vigente" Then
+                'row.Background = Brushes.LightPink
+                'End If
+
+                'Next
             End If
         End If
     End Sub
 
     Private Sub gridLista_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles gridLista.SelectionChanged
 
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As RoutedEventArgs) Handles btnSalir.Click
+        Application.Current.Shutdown()
     End Sub
 End Class

@@ -3,7 +3,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="DocList" Height="609" Width="765" ResizeMode="NoResize">
     <Grid Background="#FFD2E1FF" Margin="0,0,0,0">
-        <DataGrid x:Name="gridLista" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="501" Width="572" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single"/>
+        <DataGrid x:Name="gridLista" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="501" Width="572" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Vigencia}" Value="vigente" >
+                            <Setter Property="Background" Value="GreenYellow" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=Vigencia}" Value="no vigente" >
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
         <Label Content="Lista de versiones de documentos &#xA;Seleccione a el departamento y tipo de documentos que desea visualizar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="438" Height="43" FontWeight="Bold"/>
         <Button x:Name="btnCrear" Content="Crear documento" HorizontalAlignment="Left" Margin="600,58,0,0" VerticalAlignment="Top" Width="138" Height="48" Background="#FFC1F5B5"/>
         <Button x:Name="btnMod" Content="Modificar documento" HorizontalAlignment="Left" Margin="600,111,0,0" VerticalAlignment="Top" Width="138" Height="48" Background="#FFB0E4F3"/>

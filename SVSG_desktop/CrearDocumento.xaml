@@ -17,7 +17,7 @@
         <ComboBox x:Name="combo_seccion" HorizontalAlignment="Left" Margin="155,171,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" SelectedIndex="1"/>
         <Label Content="Detalle de protocolo:" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="130"/>
         <Button Content="Crear" HorizontalAlignment="Left" Margin="614,557,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="10,557,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="10,557,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="Tipo" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="94"/>
         <ComboBox x:Name="combo_tipo_doc" HorizontalAlignment="Left" Margin="155,202,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" SelectedIndex="1"/>
         <Label Content="Versión" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="60"/>
