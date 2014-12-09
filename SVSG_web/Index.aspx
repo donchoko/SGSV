@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Login.aspx.vb" Inherits="SVSG_web.Login1" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Index.aspx.vb" Inherits="SVSG_web.Index" %>
 
 <!DOCTYPE html>
 
@@ -12,8 +12,8 @@
     border-radius: 25px;box-shadow: 10px 10px 5px #888888;">
         <div id="banner" style="width:800px; height:160px; margin:0 auto;overflow: hidden;" >
             <div style="margin:auto">
-                <asp:Image ID="diosa" runat="server" ImageUrl="~/Diosa de la Justicia.png" Height="150px" Width="130px" ImageAlign="Left" style="margin-left: 3px; margin-top: 10px"/>
-                <asp:Image ID="logo" runat="server" ImageUrl="~/escudo_oij.png" Height="160px" ImageAlign="Right" style="margin-right: 10px; margin-top: 10px" />
+                <asp:Image ID="diosa" runat="server" ImageUrl="~/Images/diosa.jpg" Height="150px" Width="130px" ImageAlign="Left" style="margin-left: 3px; margin-top: 10px"/>
+                <asp:Image ID="logo" runat="server" ImageUrl="~/Images/escudo.jpg" Height="160px" ImageAlign="Right" style="margin-right: 10px; margin-top: 10px" />
             </div>
             <div style="margin-left:auto; margin-right:auto; width:400px; margin-top:40px" >
                 <asp:Label ID="lbl_site_name" runat="server" Text="Sistema de Control de Documentos del Sistema de Gestión" Font-Bold="True"></asp:Label>

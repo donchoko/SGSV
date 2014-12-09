@@ -12,7 +12,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SVSG_desktop", "SVSG_deskto
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SVSG_service", "SVSG_service\SVSG_service.vbproj", "{DB7B721D-77D7-4257-AC8B-97910C3064AE}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SVSG_web", "SVSG_web\SVSG_web.vbproj", "{195581FF-39A6-450D-B415-45FD154FFBDD}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SVSG_web", "SVSG_web\SVSG_web.vbproj", "{C43CD721-9041-44B1-8E04-1C2865450CFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +32,10 @@ Global
 		{DB7B721D-77D7-4257-AC8B-97910C3064AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB7B721D-77D7-4257-AC8B-97910C3064AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB7B721D-77D7-4257-AC8B-97910C3064AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{195581FF-39A6-450D-B415-45FD154FFBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{195581FF-39A6-450D-B415-45FD154FFBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{195581FF-39A6-450D-B415-45FD154FFBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{195581FF-39A6-450D-B415-45FD154FFBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43CD721-9041-44B1-8E04-1C2865450CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43CD721-9041-44B1-8E04-1C2865450CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43CD721-9041-44B1-8E04-1C2865450CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43CD721-9041-44B1-8E04-1C2865450CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
