@@ -11,72 +11,50 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Manage
+Partial Public Class SVSG
 
     '''<summary>
-    '''successMessage control.
+    '''head control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents successMessage As Global.System.Web.UI.WebControls.PlaceHolder
+    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''setPassword control.
+    '''diosa control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents setPassword As Global.System.Web.UI.WebControls.PlaceHolder
+    Protected WithEvents diosa As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''password control.
+    '''logo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents password As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents logo As Global.System.Web.UI.WebControls.Image
 
-    
     '''<summary>
-    '''newPasswordMessage control.
+    '''lbl_site_name control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents newPasswordMessage As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_site_name As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''confirmPassword control.
+    '''contenido control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents confirmPassword As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''changePassword control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents changePassword As Global.System.Web.UI.WebControls.PlaceHolder
-
-    
-    '''<summary>
-    '''externalLoginsList control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents externalLoginsList As Global.System.Web.UI.WebControls.ListView
-    
+    Protected WithEvents contenido As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

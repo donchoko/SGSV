@@ -1,14 +1,15 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Index.aspx.vb" Inherits="SVSG_web.Index" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SVSG.master.vb" Inherits="SVSG_web.SVSG" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
-    
-    <div style="width:800px; height:600px; margin:-300px 0 0 -400px; background-color:#B8CBF5; position:absolute; left:50%; top:50%;
+    <div style="width:90%; height:90%; margin:0 auto; background-color:#B8CBF5; position:absolute; left:5%; top:5% ;
     border-radius: 25px;box-shadow: 10px 10px 5px #888888;">
         <div id="banner" style="width:800px; height:160px; margin:0 auto;overflow: hidden;" >
             <div style="margin:auto">
@@ -19,16 +20,10 @@
                 <asp:Label ID="lbl_site_name" runat="server" Text="Sistema de Control de Documentos del Sistema de Gestión" Font-Bold="True"></asp:Label>
             </div>
         </div>
-        <div id="contenido" style="width:800px; height:440px">
-            <div id="div_form"  style="width:400px; height:130px; margin:65px 0 0 200px; top:50%; left:50%">
-                <form id="loginform" runat="server">
-                    <asp:Login ID="log" runat="server" Width="398px" LoginButtonText="Iniciar sesión" PasswordLabelText="Contraseña:" PasswordRequiredErrorMessage="Se requiere un password para ingresar" TitleText="" UserNameLabelText="Usuario:" UserNameRequiredErrorMessage="Se requiere un nombre de usuario para ingresar">
-                        <TextBoxStyle Font-Size="Large" />
-                    </asp:Login>
-                </form>
-            </div>
+        <div>
+            <asp:ContentPlaceHolder ID="contenido" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
-        <!---->
     </div>
 </body>
 </html>
