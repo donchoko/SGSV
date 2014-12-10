@@ -195,6 +195,7 @@
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Secciones.aspx" />
+    <Content Include="Tipo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +253,13 @@
     <Compile Include="SVSG.Master.vb">
       <DependentUpon>SVSG.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tipo.aspx.designer.vb">
+      <DependentUpon>Tipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo.aspx.vb">
+      <DependentUpon>Tipo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

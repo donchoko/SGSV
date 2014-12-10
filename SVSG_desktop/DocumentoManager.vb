@@ -62,6 +62,17 @@ Public Class DocumentoManager
 
     End Sub
 
+    Public Sub publicacionMenor(item As SVSG_lib.Publicacion, ByVal cod_original As String, ByVal version_original As String)
+        Dim client As New PublicacionService.ListadoClient
+        If client.modificacionMenor(item, cod_original, version_original) Then
+            System.Windows.MessageBox.Show("Se creo una nueva publiación")
+        Else
+            System.Windows.MessageBox.Show("Hubo un error en la creación de la publicación", MessageBoxImage.Error)
+        End If
+        client.Close()
+
+    End Sub
+
 End Class
 
 

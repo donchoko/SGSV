@@ -164,6 +164,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="desk_diagram.cd" />
     <None Include="My Project\DataSources\SVSG_lib.Documento.datasource" />
     <None Include="My Project\DataSources\SVSG_lib.Publicaciones.datasource" />
     <None Include="My Project\Settings.settings">

@@ -25,7 +25,7 @@
         <Label Content="Tipo" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="combo_tipo_doc" HorizontalAlignment="Left" Margin="144,202,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Versión" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_version" HorizontalAlignment="Left" Height="23" Margin="143,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
+        <TextBox x:Name="txt_version" HorizontalAlignment="Left" Height="23" Margin="143,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1" IsEnabled="False"/>
         <Label Content="Ambito" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="94" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="combo_ambito" HorizontalAlignment="Left" Margin="144,234,0,0" VerticalAlignment="Top" Width="169" ToolTip="Seleccione departamento" Text="Departamento" Grid.Column="1"/>
         <Label Content="Sistema de gestión&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,261,0,0" VerticalAlignment="Top" Width="115" Height="26" Grid.Column="1"/>
@@ -38,7 +38,7 @@
         <TextBox x:Name="txt_responsable" HorizontalAlignment="Left" Height="23" Margin="143,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Grid.Column="1"/>
         <WebBrowser x:Name="web_documento" HorizontalAlignment="Left" Height="338" Margin="365,41,0,0" VerticalAlignment="Top" Width="313" Grid.Column="1"/>
         <Label x:Name="txt_historico" Content="" HorizontalAlignment="Left" Margin="701,39,0,0" VerticalAlignment="Top" Height="503" Width="228" Background="#FFEBEBEB" Grid.Column="1"/>
-        <Button Content="Actualización menor" HorizontalAlignment="Left" Margin="564,557,0,0" VerticalAlignment="Top" Width="114" Grid.Column="1"/>
+        <Button x:Name="btn_menor" Content="Actualización menor" HorizontalAlignment="Left" Margin="564,557,0,0" VerticalAlignment="Top" Width="114" Grid.Column="1"/>
         <Label Content="Histórico de cambios" HorizontalAlignment="Left" Margin="701,8,0,0" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
     </Grid>
 </Window>

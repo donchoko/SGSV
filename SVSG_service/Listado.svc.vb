@@ -105,17 +105,40 @@ Public Class Listado
         End If
     End Function
 
-    Public Function modificacionMenor(item As Publicacion) As Boolean Implements IListado.modificacionMenor
+    Public Function modificacionMenor(item As Publicacion, ByVal cod_original As String, ByVal version_original As String) As Boolean Implements IListado.modificacionMenor
         If item Is Nothing Then
             Throw New ArgumentNullException("composite")
         Else
             Try
+                Dim p As Publicacion
                 Using context As New SVSG_lib.SVSGEntities
                     context.Configuration.ProxyCreationEnabled = False
-
+                    p = context.Publicacion.Include("Documento").Where(Function(pub) pub.cod = cod_original).Where(Function(pub) pub.documento_version = version_original).FirstOrDefault()
                 End Using
-            Catch ex As Exception
 
+                p.Documento.creado = item.Documento.creado
+                p.Documento.encargado = item.Documento.encargado
+                p.Documento.nombre = item.Documento.nombre
+                p.Documento.alcance = item.Documento.alcance
+
+                p.detalle += Environment.NewLine
+                p.detalle += Environment.NewLine
+                p.detalle += item.detalle
+                p.procedencia = item.procedencia
+                p.publicado_por = item.publicado_por
+                p.seccion = item.seccion
+                p.sistema_gestion = item.sistema_gestion
+                p.tipo = item.tipo
+                p.tipo_alcance = item.tipo_alcance
+
+                Using context As New SVSG_lib.SVSGEntities
+                    context.Configuration.ProxyCreationEnabled = False
+                    context.Entry(p).State = System.Data.EntityState.Modified
+                    context.SaveChanges()
+                End Using
+                Return True
+            Catch ex As Exception
+                Return False
             End Try
 
         End If

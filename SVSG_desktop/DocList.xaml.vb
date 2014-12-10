@@ -34,7 +34,7 @@
 
     Private Sub btnMod_Click(sender As Object, e As RoutedEventArgs) Handles btnMod.Click
         If gridLista.SelectedItem IsNot Nothing Then
-            manager.modificar(CType(gridLista.SelectedItem, itemLista).Codigo)
+            manager.modificar(CType(gridLista.SelectedItem, itemLista).Codigo, CType(gridLista.SelectedItem, itemLista).Version)
         Else
             MessageBox.Show("No se ha seleccionado ninguna publicación")
         End If

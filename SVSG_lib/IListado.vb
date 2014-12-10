@@ -12,7 +12,7 @@ Public Interface IListado
     Function crearDocumento(ByVal publicacion As Publicacion) As Boolean
 
     <OperationContract()>
-    Function modificacionMenor(ByVal publicacion As Publicacion) As Boolean
+    Function modificacionMenor(ByVal publicacion As Publicacion, ByVal cod_original As String, ByVal version_original As String) As Boolean
 
     <OperationContract()>
     Function publicacionMayor(ByVal publicacion As Publicacion) As Boolean

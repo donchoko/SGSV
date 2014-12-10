@@ -35,6 +35,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SVSG_lib" minOccurs="0" name="publicacion" nillable="true" type="q3:Publicacion" />
+        <xs:element minOccurs="0" name="cod_original" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="version_original" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

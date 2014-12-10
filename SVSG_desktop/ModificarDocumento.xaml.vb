@@ -10,6 +10,8 @@ Public Class ModificarDocumento
     Private alcance() As String = {"General", "Especifico"}
     Private sis_gestion() As String = {"Calidad", "Otro"}
     Private vigencias() As String = {"Vigente", "Obsolteo"}
+    Private cod_original As String
+    Private version_original As String
 
     Public Sub New(ByVal doc As SVSG_lib.Documento, ByVal publi As SVSG_lib.Publicacion)
 
@@ -22,6 +24,9 @@ Public Class ModificarDocumento
         combo_sistema_gestion.ItemsSource = sis_gestion
         combo_tipo_doc.ItemsSource = tipos
         colocarDatos(doc, publi)
+        If publi.vigencia = "no vigente" Then
+            btn_menor.IsEnabled = False
+        End If
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -32,6 +37,9 @@ Public Class ModificarDocumento
         txt_nombre.Text = doc.nombre
         txt_responsable.Text = publi.publicado_por
         txt_alcance.Text = doc.alcance
+
+        cod_original = doc.cod
+        version_original = publi.documento_version
 
         doc.Publicacion.OrderByDescending(Function(p) p.fecha)
 
@@ -102,5 +110,38 @@ Public Class ModificarDocumento
             MsgBox("Error, " + ex.Message, MsgBoxStyle.Critical, "Adjuntando documento")
         End Try
 
+    End Sub
+
+    Private Sub btn_menor_Click(sender As Object, e As RoutedEventArgs) Handles btn_menor.Click
+        If check_campos() Then
+            Dim dm As New DocumentoManager
+            Dim p As New SVSG_lib.Publicacion
+            Dim d As New SVSG_lib.Documento
+            d.cod = txt_cod.Text
+            d.nombre = txt_nombre.Text
+            d.encargado = txt_responsable.Text
+            d.creado = Date.Today
+            d.alcance = txt_alcance.Text
+
+            p.ambito = combo_ambito.Text
+            p.cod = txt_cod.Text
+            p.documento_version = txt_version.Text
+            p.fecha = Date.Today
+            p.procedencia = "interno"
+            p.publicado_por = txt_responsable.Text
+            p.seccion = combo_seccion.Text
+            p.sistema_gestion = combo_sistema_gestion.Text
+            p.tipo = combo_tipo_doc.Text
+            p.tipo_alcance = combo_tipo_alcance.Text
+            p.vigencia = "vigente"
+            p.archivo = dm.convertir_Archivo_ArregloBytes(txt_archivo.Content)
+            p.Documento = d
+            p.detalle = txt_detalle.Text
+
+            dm.publicacionMenor(p, cod_original, version_original)
+            Me.Close()
+        Else
+            MessageBox.Show("ERORR: Se necesita completar todos los campos primero", MessageBoxImage.Warning)
+        End If
     End Sub
 End Class

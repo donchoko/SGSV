@@ -41,13 +41,22 @@ Partial Public Class SVSG
     Protected WithEvents logo As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''lbl_site_name control.
+    '''lbl_title_top control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_site_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_title_top As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_title_bot control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_title_bot As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''contenido control.

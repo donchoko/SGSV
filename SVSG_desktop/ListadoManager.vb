@@ -9,7 +9,7 @@ Public Class ListadoManager
         cd.Show()
     End Sub
 
-    Public Sub modificar(ByVal codigo As String)
+    Public Overloads Sub modificar(ByVal codigo As String)
         Dim doc As SVSG_lib.Documento
         Try
             Dim client As New PublicacionService.ListadoClient()
@@ -36,6 +36,35 @@ Public Class ListadoManager
 
 
     End Sub
+
+    Public Overloads Sub modificar(ByVal codigo As String, ByVal version As String)
+        Dim doc As SVSG_lib.Documento
+        Try
+            Dim client As New PublicacionService.ListadoClient()
+            doc = client.cargarItem(codigo)
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
+        End Try
+        Dim pub As SVSG_lib.Publicacion
+        doc.Publicacion.OrderByDescending(Function(p) p.fecha)
+        'pub = doc.Publicacion.Last()
+        For Each p In doc.Publicacion
+            If p.documento_version = version Then
+                pub = p
+            End If
+
+        Next
+
+        If pub Is Nothing Then
+            MessageBox.Show("No hay ninguna publicacion correspondiente")
+        Else
+            Dim md As ModificarDocumento = New ModificarDocumento(doc, pub)
+            md.Show()
+        End If
+
+
+    End Sub
+
 
     Public Sub abrirHistorico()
         Dim h As Historico = New Historico()
