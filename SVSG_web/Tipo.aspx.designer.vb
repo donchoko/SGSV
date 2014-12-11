@@ -14,83 +14,83 @@ Option Explicit On
 Partial Public Class Tipo
 
     '''<summary>
-    '''Button3 control.
+    '''btn_procedimiento control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_procedimiento As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button4 control.
+    '''btn_instructivo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_instructivo As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button5 control.
+    '''btn_formato control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button5 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_formato As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button6 control.
+    '''btn_listado control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button6 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_listado As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button7 control.
+    '''btn_manual control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button7 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_manual As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button8 control.
+    '''btn_registro control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button8 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_registro As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button11 control.
+    '''btn_norma control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button11 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_norma As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button12 control.
+    '''btn_catalogo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button12 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_catalogo As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button13 control.
+    '''btn_investigacion control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button13 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_investigacion As Global.System.Web.UI.WebControls.Button
 End Class
