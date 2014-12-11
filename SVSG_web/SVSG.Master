@@ -9,21 +9,35 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div style="width:90%; height:90%; margin:0 auto; background-color:#B8CBF5; position:absolute; left:5%; top:5% ;border-radius: 25px;box-shadow: 10px 10px 5px #888888;">
-        <div id="banner" style="width:800px; height:160px; margin:0 auto;overflow: hidden;" >
-            <div style="margin:auto">
-                <asp:Image ID="diosa" runat="server" ImageUrl="~/Images/diosa.jpg" Height="150px" Width="130px" ImageAlign="Left" style="margin-left: 3px; margin-top: 10px"/>
-                <asp:Image ID="logo" runat="server" ImageUrl="~/Images/oij.jpg" Height="160px" ImageAlign="Right" style="margin-right: 10px; margin-top: 10px" />
+    <form runat="server" >
+        <div style="width:90%; height:90%; margin:0 auto; background-color:#B8CBF5; position:absolute; left:5%; top:5% ;border-radius: 25px;box-shadow: 10px 10px 5px #888888;">
+            <div id="banner" style="width:800px; height:160px; margin:0 auto;overflow: hidden;" >
+                <div style="margin:auto">
+                    <asp:Image ID="diosa" runat="server" ImageUrl="~/Images/diosa.jpg" Height="150px" Width="130px" ImageAlign="Left" style="margin-left: 3px; margin-top: 10px"/>
+                    <asp:Image ID="logo" runat="server" ImageUrl="~/Images/oij.jpg" Height="160px" ImageAlign="Right" style="margin-right: 10px; margin-top: 10px" />
+                </div>
+                <div style="margin-left:auto; margin-right:auto; width:450px; margin-top:40px; text-align:center;" >
+                
+                    <a href="Secciones.aspx" style="color:black; text-decoration:none" >
+                        <asp:Label ID="lbl_title_top" runat="server" Text="Sistema de Control de Documentos" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large"></asp:Label>
+                    </a>
+                    <br />
+                    <a href="Secciones.aspx" style="color:black; text-decoration:none" >
+                        <asp:Label ID="lbl_title_bot" runat="server" Text="del Sistema de Gestión" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large" Font-Underline="False">
+                        </asp:Label>
+                    </a>
+                    <br />
+                    <br />
+                    <asp:Label ID="usuario_label" runat="server" Text=""></asp:Label><br />
+                    <asp:LinkButton ID="lnk_cerrar" runat="server" Text="Cerrar sesión"></asp:LinkButton>
+                
+                </div>
             </div>
-            <div style="margin-left:auto; margin-right:auto; width:450px; margin-top:40px; text-align:center;" >
-                <asp:Label ID="lbl_title_top" runat="server" Text="Sistema de Control de Documentos" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large"></asp:Label>
-                <br /><asp:Label ID="lbl_title_bot" runat="server" Text="del Sistema de Gestión" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large" Font-Underline="False"></asp:Label>
+            <div style="overflow: hidden;">
+                <asp:ContentPlaceHolder ID="contenido" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
-        <div style="overflow: hidden;">
-            <asp:ContentPlaceHolder ID="contenido" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </div>
+    </form>
 </body>
 </html>

@@ -59,6 +59,24 @@ Partial Public Class SVSG
     Protected WithEvents lbl_title_bot As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''usuario_label control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents usuario_label As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lnk_cerrar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnk_cerrar As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''contenido control.
     '''</summary>
     '''<remarks>

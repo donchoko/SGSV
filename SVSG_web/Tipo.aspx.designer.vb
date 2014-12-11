@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class Tipo
 
     '''<summary>
-    '''seccion_form control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents seccion_form As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
     '''Button3 control.
     '''</summary>
     '''<remarks>
