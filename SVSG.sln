@@ -13,6 +13,9 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SVSG_service", "SVSG_service\SVSG_service.vbproj", "{DB7B721D-77D7-4257-AC8B-97910C3064AE}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SVSG_web", "SVSG_web\SVSG_web.vbproj", "{9D8F4AD8-033B-44B6-8050-FF3B803791B4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB7B721D-77D7-4257-AC8B-97910C3064AE} = {DB7B721D-77D7-4257-AC8B-97910C3064AE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

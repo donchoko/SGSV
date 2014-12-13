@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Tipo
 
     '''<summary>
+    '''tbl_info control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbl_info As Global.System.Web.UI.WebControls.Table
+
+    '''<summary>
     '''btn_procedimiento control.
     '''</summary>
     '''<remarks>
@@ -86,11 +95,20 @@ Partial Public Class Tipo
     Protected WithEvents btn_catalogo As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btn_investigacion control.
+    '''btn_especificacion control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_investigacion As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_especificacion As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btn_hoja_calculo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_hoja_calculo As Global.System.Web.UI.WebControls.Button
 End Class

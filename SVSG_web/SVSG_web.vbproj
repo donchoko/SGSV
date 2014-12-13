@@ -46,6 +46,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -185,10 +187,13 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\diosa.jpg" />
+    <Content Include="Images\escudo.png" />
     <Content Include="Images\oij.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="listado.aspx" />
     <Content Include="packages.config" />
+    <Content Include="My Project\DataSources\SVSG_lib.Documento.datasource" />
+    <Content Include="My Project\DataSources\SVSG_lib.Publicaciones.datasource" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -196,12 +201,30 @@
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Secciones.aspx" />
+    <None Include="Service References\PublicacionesService\Listado.disco" />
+    <None Include="Service References\PublicacionesService\configuration91.svcinfo" />
+    <None Include="Service References\PublicacionesService\configuration.svcinfo" />
+    <None Include="Service References\PublicacionesService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
     <Content Include="Tipo.aspx" />
+    <Content Include="Tipo_gica.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\_references.js" />
     <Content Include="SVSG.Master" />
+    <None Include="Service References\PublicacionesService\Listado.wsdl" />
+    <None Include="Service References\PublicacionesService\Listado.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicacionesService\Listado1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicacionesService\Listado2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -255,6 +278,11 @@
       <DependentUpon>Secciones.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Service References\PublicacionesService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="SVSG.Master.designer.vb">
       <DependentUpon>SVSG.Master</DependentUpon>
     </Compile>
@@ -267,6 +295,13 @@
     </Compile>
     <Compile Include="Tipo.aspx.vb">
       <DependentUpon>Tipo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Tipo_gica.aspx.designer.vb">
+      <DependentUpon>Tipo_gica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_gica.aspx.vb">
+      <DependentUpon>Tipo_gica.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
@@ -292,6 +327,18 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Images - Copy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PublicacionesService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SVSG_lib\SVSG_lib.vbproj">
+      <Project>{6e0df2e7-dda6-4f41-b3d7-c36613c47356}</Project>
+      <Name>SVSG_lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

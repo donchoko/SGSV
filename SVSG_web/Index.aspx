@@ -11,11 +11,11 @@
         <div id="banner" style="width:800px; height:160px; margin:0 auto;overflow: hidden;" >
             <div style="margin:auto">
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/diosa.jpg" Height="150px" Width="130px" ImageAlign="Left" style="margin-left: 3px; margin-top: 10px"/>
-                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/oij.jpg" Height="160px" ImageAlign="Right" style="margin-right: 10px; margin-top: 10px" />
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/escudo.png" Height="145px" ImageAlign="Right" style="margin-right: 10px; margin-top: 10px" />
             </div>
             <div style="margin-left:auto; margin-right:auto; width:450px; margin-top:40px; text-align:center;" >
                 <asp:Label ID="Label1" runat="server" Text="Sistema de Control de Documentos" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large"></asp:Label>
-                <br /><asp:Label ID="Label2" runat="server" Text="del Sistema de Gestión" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large" Font-Underline="False"></asp:Label>
+                <br /><asp:Label ID="Label2" runat="server" Text="Departamento de Ciencias Forenses" Font-Bold="True" Font-Names="Segoe UI" Font-Size="X-Large" Font-Underline="False"></asp:Label>
             </div>
         </div>
     <div style="overflow: hidden;">

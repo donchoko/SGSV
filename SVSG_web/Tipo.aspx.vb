@@ -1,7 +1,37 @@
 ﻿Public Class Tipo
     Inherits System.Web.UI.Page
 
+    Private Structure tabla_item
+        Property Codigo As String
+        Property Nombre As String
+        Property Version As String
+        Property Fecha As String
+    End Structure
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim context As New PublicacionesService.ListadoClient()
+        Dim lista_temp As List(Of SVSG_lib.Publicacion) = context.cargarLista("*", "2", "vigente").Lista
+        Dim lista As New List(Of tabla_item)
+
+        For Each p As SVSG_lib.Publicacion In lista_temp
+            Dim r As New TableRow()
+            Dim i As New tabla_item
+            Dim c As New TableCell()
+            c.Text = p.cod
+            r.Cells.Add(c)
+            c = New TableCell()
+            c.Text = p.Documento.nombre
+            r.Cells.Add(c)
+            c = New TableCell()
+            c.Text = p.documento_version
+            r.Cells.Add(c)
+            c = New TableCell()
+            c.Text = p.fecha
+            r.Cells.Add(c)
+            tbl_info.Rows.Add(r)
+        Next
+
 
     End Sub
 
@@ -37,7 +67,7 @@
 
     End Sub
 
-    Protected Sub btn_investigacion_Click(sender As Object, e As EventArgs) Handles btn_investigacion.Click
+    Protected Sub btn_especificacion_Click(sender As Object, e As EventArgs) Handles btn_especificacion.Click
 
     End Sub
 
@@ -46,4 +76,6 @@
         Session.Item("tipo") = tipo
         Response.Redirect("Listado.aspx")
     End Sub
+
+    
 End Class

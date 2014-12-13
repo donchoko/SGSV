@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Listado" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54789/Listado.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54789/Listado.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54789/Listado.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SVSG_lib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IListado_cargarLista_InputMessage">
+    <wsdl:part name="parameters" element="tns:cargarLista" />
+  </wsdl:message>
+  <wsdl:message name="IListado_cargarLista_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cargarListaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IListado_crearDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:crearDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IListado_crearDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:crearDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IListado_modificacionMenor_InputMessage">
+    <wsdl:part name="parameters" element="tns:modificacionMenor" />
+  </wsdl:message>
+  <wsdl:message name="IListado_modificacionMenor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modificacionMenorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IListado_publicacionMayor_InputMessage">
+    <wsdl:part name="parameters" element="tns:publicacionMayor" />
+  </wsdl:message>
+  <wsdl:message name="IListado_publicacionMayor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:publicacionMayorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IListado_cargarItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:cargarItem" />
+  </wsdl:message>
+  <wsdl:message name="IListado_cargarItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cargarItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IListado_eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IListado_eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IListado">
+    <wsdl:operation name="cargarLista">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/cargarLista" message="tns:IListado_cargarLista_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/cargarListaResponse" message="tns:IListado_cargarLista_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="crearDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/crearDocumento" message="tns:IListado_crearDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/crearDocumentoResponse" message="tns:IListado_crearDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modificacionMenor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/modificacionMenor" message="tns:IListado_modificacionMenor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/modificacionMenorResponse" message="tns:IListado_modificacionMenor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="publicacionMayor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/publicacionMayor" message="tns:IListado_publicacionMayor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/publicacionMayorResponse" message="tns:IListado_publicacionMayor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/cargarItem" message="tns:IListado_cargarItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/cargarItemResponse" message="tns:IListado_cargarItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IListado/eliminar" message="tns:IListado_eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IListado/eliminarResponse" message="tns:IListado_eliminar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IListado" type="tns:IListado">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="cargarLista">
+      <soap:operation soapAction="http://tempuri.org/IListado/cargarLista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearDocumento">
+      <soap:operation soapAction="http://tempuri.org/IListado/crearDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificacionMenor">
+      <soap:operation soapAction="http://tempuri.org/IListado/modificacionMenor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="publicacionMayor">
+      <soap:operation soapAction="http://tempuri.org/IListado/publicacionMayor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarItem">
+      <soap:operation soapAction="http://tempuri.org/IListado/cargarItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar">
+      <soap:operation soapAction="http://tempuri.org/IListado/eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Listado">
+    <wsdl:port name="BasicHttpBinding_IListado" binding="tns:BasicHttpBinding_IListado">
+      <soap:address location="http://localhost:54789/Listado.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

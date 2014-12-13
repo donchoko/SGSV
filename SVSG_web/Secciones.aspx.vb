@@ -46,8 +46,16 @@
     End Sub
 
     Private Sub seleccionarSeccion(ByVal seccion As String)
-        Session.Item("ultimo") = "secciones"
-        Session.Item("seccion") = seccion
-        Response.Redirect("Tipo.aspx")
+        If (seccion = "GICA") Then
+            Session.Item("ultimo") = "secciones"
+            Session.Item("seccion") = seccion
+            Response.Redirect("Tipo_gica.aspx")
+        Else
+            Session.Item("ultimo") = "secciones"
+            Session.Item("seccion") = seccion
+            Response.Redirect("Tipo.aspx")
+        End If
     End Sub
+
+
 End Class
