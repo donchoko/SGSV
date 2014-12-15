@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.Win32
+Imports System.IO
 
 Public Class ModificarDocumento
 
@@ -31,13 +32,27 @@ Public Class ModificarDocumento
 
     End Sub
 
+    Private Function byte_a_archivo(ByVal dato As Byte()) As String
+        Try
+            Dim filename As String = System.IO.Path.GetTempFileName() + ".pdf"
+            File.WriteAllBytes(filename, dato)
+            Return filename
+        Catch ex As Exception
+            MessageBox.Show("no se pudo cargar el archivo de la base de datos")
+            Return "error"
+        End Try
+
+    End Function
+
     Public Sub colocarDatos(ByVal doc As SVSG_lib.Documento, ByVal publi As SVSG_lib.Publicacion)
         txt_cod.Text = doc.cod
         txt_version.Text = publi.documento_version
         txt_nombre.Text = doc.nombre
         txt_responsable.Text = publi.publicado_por
         txt_alcance.Text = doc.alcance
-
+        Dim filename As String
+        filename = byte_a_archivo(publi.archivo)
+        web_documento.Source = New Uri(filename, UriKind.Absolute)
         cod_original = doc.cod
         version_original = publi.documento_version
 
@@ -144,4 +159,5 @@ Public Class ModificarDocumento
             MessageBox.Show("ERORR: Se necesita completar todos los campos primero", MessageBoxImage.Warning)
         End If
     End Sub
+
 End Class

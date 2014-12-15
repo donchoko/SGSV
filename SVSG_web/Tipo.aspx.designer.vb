@@ -111,4 +111,13 @@ Partial Public Class Tipo
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_hoja_calculo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btn_volver control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_volver As Global.System.Web.UI.WebControls.LinkButton
 End Class

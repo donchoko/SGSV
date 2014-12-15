@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Tipo_gica
 
     '''<summary>
+    '''tbl_info control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tbl_info As Global.System.Web.UI.WebControls.Table
+
+    '''<summary>
     '''btn_diagrama_proceso control.
     '''</summary>
     '''<remarks>
@@ -39,4 +48,13 @@ Partial Public Class Tipo_gica
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_objetivo_sistema As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btn_volver control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_volver As Global.System.Web.UI.WebControls.LinkButton
 End Class

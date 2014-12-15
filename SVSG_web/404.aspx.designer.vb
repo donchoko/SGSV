@@ -11,16 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class listado
-
-    '''<summary>
-    '''tbl_publicaciones control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tbl_publicaciones As Global.System.Web.UI.WebControls.Table
+Partial Public Class _404
 
     '''<summary>
     '''btn_volver control.

@@ -29,5 +29,7 @@
             </asp:TableHeaderRow>
         </asp:Table>
     </div>
-
+    <div style="text-align:center">
+        <asp:LinkButton id="btn_volver" runat="server" Text="Regresar al menu de secciones"></asp:LinkButton>
+    </div>
 </asp:Content>

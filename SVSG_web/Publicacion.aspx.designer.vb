@@ -14,6 +14,60 @@ Option Explicit On
 Partial Public Class Publicacion
 
     '''<summary>
+    '''lbl_cod control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_cod As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_nombre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_version control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_version As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_alcance control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_alcance As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_texto_cambios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_texto_cambios As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_cambios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_cambios As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''viewer control.
     '''</summary>
     '''<remarks>
@@ -21,4 +75,13 @@ Partial Public Class Publicacion
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents viewer As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''btn_volver control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_volver As Global.System.Web.UI.WebControls.LinkButton
 End Class

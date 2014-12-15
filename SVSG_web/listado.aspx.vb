@@ -3,10 +3,10 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim context As New PublicacionesService.ListadoClient()
-        Dim lista As List(Of SVSG_lib.Publicacion) = context.cargarLista("*", "2", "vigente").Lista
+        Dim lista As List(Of SVSG_lib.Publicacion) = context.cargarLista(Session.Item("tipo").ToString(), Session.Item("seccion").ToString(), "vigente").Lista
         context.Close()
         If lista Is Nothing Then
-
+            Response.Redirect("404.aspx")
         Else
             For Each p As SVSG_lib.Publicacion In lista
                 Dim r As New TableRow()

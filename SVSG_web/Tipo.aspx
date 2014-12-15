@@ -39,7 +39,7 @@
     <br />
     <br />
     <div style="clear:both">
-        <table style="margin-left: auto; margin-right: auto; " cellspacing="25">
+        <table style="margin-left: auto; margin-right: auto;" cellspacing="25">
             <tr>
                 <td><asp:Button ID="btn_procedimiento" runat="server" Text="Procedimiento" Height="100px" Width="175px" CssClass="buttons"  /></td>
                 <td><asp:Button ID="btn_instructivo" runat="server" Text="Instructivo" Height="100px" Width="175px" CssClass="buttons"  /></td>
@@ -62,5 +62,7 @@
             </tr>
         </table>
     </div>
-    
+    <div style="text-align:center">
+        <asp:LinkButton id="btn_volver" runat="server" Text="Regresar al menu de secciones"></asp:LinkButton>
+    </div>
 </asp:Content>
