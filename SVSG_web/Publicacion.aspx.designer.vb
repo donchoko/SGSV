@@ -11,14 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class listado
+Partial Public Class Publicacion
 
     '''<summary>
-    '''tbl_publicaciones control.
+    '''viewer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tbl_publicaciones As Global.System.Web.UI.WebControls.Table
+    Protected WithEvents viewer As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

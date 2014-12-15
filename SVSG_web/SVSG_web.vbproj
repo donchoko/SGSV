@@ -190,16 +190,50 @@
     <Content Include="Images\escudo.png" />
     <Content Include="Images\oij.jpg" />
     <Content Include="Index.aspx" />
-    <Content Include="listado.aspx" />
+    <Content Include="Listado.aspx" />
     <Content Include="packages.config" />
     <Content Include="My Project\DataSources\SVSG_lib.Documento.datasource" />
     <Content Include="My Project\DataSources\SVSG_lib.Publicaciones.datasource" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="PDF_temp.aspx" />
+    <Content Include="Publicacion.aspx" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\pdf.js" />
+    <Content Include="Scripts\pdfobject.js" />
+    <Content Include="Scripts\ViewerJS\AGPL-3.0.txt" />
+    <Content Include="Scripts\ViewerJS\compatibility.js" />
+    <Content Include="Scripts\ViewerJS\example.local.css" />
+    <Content Include="Scripts\ViewerJS\images\kogmbh.png" />
+    <Content Include="Scripts\ViewerJS\images\nlnet.png" />
+    <Content Include="Scripts\ViewerJS\images\texture.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-download.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-fullscreen.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-menuArrows.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-pageDown.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-pageUp.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-presentation.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-zoomIn.png" />
+    <Content Include="Scripts\ViewerJS\images\toolbarButton-zoomOut.png" />
+    <Content Include="Scripts\ViewerJS\index.html" />
+    <Content Include="Scripts\ViewerJS\ODFViewerPlugin.css" />
+    <Content Include="Scripts\ViewerJS\ODFViewerPlugin.js" />
+    <Content Include="Scripts\ViewerJS\pdf.js" />
+    <Content Include="Scripts\ViewerJS\pdf.worker.js" />
+    <Content Include="Scripts\ViewerJS\pdfjsversion.js" />
+    <Content Include="Scripts\ViewerJS\PDFViewerPlugin.css" />
+    <Content Include="Scripts\ViewerJS\PDFViewerPlugin.js" />
+    <Content Include="Scripts\ViewerJS\pdf_find_bar.js" />
+    <Content Include="Scripts\ViewerJS\pdf_find_controller.js" />
+    <Content Include="Scripts\ViewerJS\PluginLoader.js" />
+    <Content Include="Scripts\ViewerJS\text_layer_builder.js" />
+    <Content Include="Scripts\ViewerJS\ui_utils.js" />
+    <Content Include="Scripts\ViewerJS\viewer.css" />
+    <Content Include="Scripts\ViewerJS\viewer.js" />
+    <Content Include="Scripts\ViewerJS\webodf.js" />
     <Content Include="Secciones.aspx" />
     <None Include="Service References\PublicacionesService\Listado.disco" />
     <None Include="Service References\PublicacionesService\configuration91.svcinfo" />
@@ -245,11 +279,11 @@
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="listado.aspx.designer.vb">
-      <DependentUpon>listado.aspx</DependentUpon>
+    <Compile Include="Listado.aspx.designer.vb">
+      <DependentUpon>Listado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="listado.aspx.vb">
-      <DependentUpon>listado.aspx</DependentUpon>
+    <Compile Include="Listado.aspx.vb">
+      <DependentUpon>Listado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -270,6 +304,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PDF_temp.aspx.designer.vb">
+      <DependentUpon>PDF_temp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDF_temp.aspx.vb">
+      <DependentUpon>PDF_temp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Publicacion.aspx.designer.vb">
+      <DependentUpon>Publicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publicacion.aspx.vb">
+      <DependentUpon>Publicacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Secciones.aspx.designer.vb">
       <DependentUpon>Secciones.aspx</DependentUpon>

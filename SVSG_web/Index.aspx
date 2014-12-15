@@ -50,13 +50,10 @@
                         </tr>
                         <tr>
                             <td align="center" colspan="2">
-                                <asp:Label ID="lbl_warn" runat="server" Text=""/></asp:Label>
+                                <asp:Label ID="lbl_warn" runat="server" Text=""/>
                             </td>                           
                         </tr>
                     </table> 
-                    <!--<div style="margin-left: auto; margin-right: auto; text-align:center ">
-                        <asp:CheckBox ID="CheckBox1" runat="server" />Por este medio acepto los terminos y condiciones de uso
-                    </div>-->
                     <br />
                 </div>
             </form>

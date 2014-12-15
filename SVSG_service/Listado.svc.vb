@@ -77,6 +77,9 @@ Public Class Listado
                 End Using
             End If
 
+            For Each temp As Publicacion In publicaciones.Lista
+                temp.archivo = Nothing
+            Next
             'Using context As New SVSG_lib.SVSGEntities
             'context.Configuration.ProxyCreationEnabled = False
             'publicaciones.Lista = context.Publicacion.Include("Documento").ToList()
